@@ -1,0 +1,2384 @@
+{
+  "config": {
+    "k_values": [
+      5
+    ],
+    "num_samples": 9,
+    "sample_mode": "wrong",
+    "wrong_consensus": "all",
+    "shap_background_size": 50,
+    "N": 4,
+    "pool": "sum"
+  },
+  "summary": {
+    "rf": {
+      "5": {
+        "shap_avg_drop": 0.05335197004138822,
+        "shap_std_drop": 0.07417329962213284,
+        "lime_avg_drop": 0.002124566972988024,
+        "lime_std_drop": 0.003527001455975137,
+        "winner": "SHAP"
+      }
+    },
+    "xgboost": {
+      "5": {
+        "shap_avg_drop": 0.18656174838542938,
+        "shap_std_drop": 0.34822431206703186,
+        "lime_avg_drop": 0.16561436653137207,
+        "lime_std_drop": 0.26200029253959656,
+        "winner": "SHAP"
+      }
+    },
+    "lightgbm": {
+      "5": {
+        "shap_avg_drop": 0.2651451496985586,
+        "shap_std_drop": 0.4495564984498831,
+        "lime_avg_drop": 0.15344405246830042,
+        "lime_std_drop": 0.3012227162913741,
+        "winner": "SHAP"
+      }
+    },
+    "mlp": {
+      "5": {
+        "shap_avg_drop": -0.025834987075121045,
+        "shap_std_drop": 0.24656084704443065,
+        "lime_avg_drop": 0.03298820324887585,
+        "lime_std_drop": 0.04345707382484204,
+        "winner": "LIME"
+      }
+    }
+  },
+  "timing": {
+    "rf": {
+      "shap_avg_time_s": 0.3519943820105659,
+      "lime_avg_time_s": 1.436776081720988
+    },
+    "xgboost": {
+      "shap_avg_time_s": 0.19920084211561415,
+      "lime_avg_time_s": 1.1908810933430989
+    },
+    "lightgbm": {
+      "shap_avg_time_s": 0.9177922672695584,
+      "lime_avg_time_s": 1.182817644543118
+    },
+    "mlp": {
+      "shap_avg_time_s": 7.047110425101386,
+      "lime_avg_time_s": 1.157914612028334
+    }
+  },
+  "sample_meta": [
+    {
+      "idx": 205,
+      "true_label": 1,
+      "category": "wrong_fn",
+      "misclassified_by": [
+        "rf",
+        "xgboost",
+        "lightgbm",
+        "mlp"
+      ]
+    },
+    {
+      "idx": 280,
+      "true_label": 1,
+      "category": "wrong_fn",
+      "misclassified_by": [
+        "rf",
+        "xgboost",
+        "lightgbm",
+        "mlp"
+      ]
+    },
+    {
+      "idx": 224,
+      "true_label": 1,
+      "category": "wrong_fn",
+      "misclassified_by": [
+        "rf",
+        "xgboost",
+        "lightgbm",
+        "mlp"
+      ]
+    },
+    {
+      "idx": 178,
+      "true_label": 1,
+      "category": "wrong_fn",
+      "misclassified_by": [
+        "rf",
+        "xgboost",
+        "lightgbm",
+        "mlp"
+      ]
+    },
+    {
+      "idx": 274,
+      "true_label": 1,
+      "category": "wrong_fn",
+      "misclassified_by": [
+        "rf",
+        "xgboost",
+        "lightgbm",
+        "mlp"
+      ]
+    },
+    {
+      "idx": 12,
+      "true_label": 0,
+      "category": "wrong_fp",
+      "misclassified_by": [
+        "rf",
+        "xgboost",
+        "lightgbm",
+        "mlp"
+      ]
+    },
+    {
+      "idx": 36,
+      "true_label": 0,
+      "category": "wrong_fp",
+      "misclassified_by": [
+        "rf",
+        "xgboost",
+        "lightgbm",
+        "mlp"
+      ]
+    },
+    {
+      "idx": 4,
+      "true_label": 0,
+      "category": "wrong_fp",
+      "misclassified_by": [
+        "rf",
+        "xgboost",
+        "lightgbm",
+        "mlp"
+      ]
+    },
+    {
+      "idx": 136,
+      "true_label": 0,
+      "category": "wrong_fp",
+      "misclassified_by": [
+        "rf",
+        "xgboost",
+        "lightgbm",
+        "mlp"
+      ]
+    }
+  ],
+  "detailed_samples": {
+    "rf": {
+      "5": [
+        {
+          "sample_idx": 205,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_getparentchild.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.27185448676103185,
+          "shap_abs_drop": -0.018523614539705358,
+          "lime_abs_drop": 0.0020000000000000018,
+          "shap_top_k_features": [
+            "openkey openkey closekeys openkey",
+            "closekeys openkey closekeys openkey",
+            "close read read read",
+            "read cleanup create direnum",
+            "openkey openkey closekeys querykey"
+          ],
+          "lime_top_k_features": [
+            "imageload imageunload kernel_network_task_tcpip dataretransmitted",
+            "kernel_network_task_udpip datareceivedoverudpprotocol threadstop stop",
+            "datasent kernel_network_task_tcpip datareceived cleanup",
+            "datasent imageload imageload imageunload",
+            "kernel_network_task_tcpip datareceived kernel_network_task_udpip datareceivedoverudpprotocol"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.007447752956027643,
+            -0.007290491196690567,
+            -0.006870177709886321,
+            -0.006865338977295323,
+            0.006061713150574803
+          ],
+          "lime_weights": [
+            -0.002118465729858084,
+            -0.0020652341746548457,
+            -0.0015794575501437832,
+            0.001003757988426874,
+            -0.0009472579004064631
+          ],
+          "shap_masked_confidence": 0.2903781013007372,
+          "lime_masked_confidence": 0.26985448676103185,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 280,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_mafia_logs_get-keystrokes.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.36273475491074647,
+          "shap_abs_drop": 0.0,
+          "lime_abs_drop": 0.0016800000000000148,
+          "shap_top_k_features": [
+            "create read read create",
+            "openkey openkey closekeys querykey",
+            "closekeys openkey closekeys openkey",
+            "openkey openkey closekeys openkey",
+            "closekeys openkey create queryinformation"
+          ],
+          "lime_top_k_features": [
+            "cleanup kernel_network_task_tcpip datasent threadstop",
+            "imageload cleanup imageunload close",
+            "imageunload close cleanup close",
+            "unknown create create queryinformation",
+            "close unknown create create"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            6.0,
+            2.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.008243404554922904,
+            0.008008669182217432,
+            -0.006714620924400485,
+            -0.006544020876280001,
+            -0.005583990164069092
+          ],
+          "lime_weights": [
+            -0.0018725049270845492,
+            -0.0017921540331965436,
+            -0.00117664100739803,
+            0.0009203025384069895,
+            -0.0006451927433638729
+          ],
+          "shap_masked_confidence": 0.36273475491074647,
+          "lime_masked_confidence": 0.36105475491074646,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 224,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_sysmon2csv.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.13635116211259066,
+          "shap_abs_drop": -0.026858058608058594,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "closekeys openkey closekeys openkey",
+            "openkey openkey closekeys openkey",
+            "create create create queryinformation",
+            "openkey closekeys openkey create",
+            "close create fsctl cleanup"
+          ],
+          "lime_top_k_features": [
+            "dataretransmitted cleanup close cleanup",
+            "kernel_network_task_tcpip dataretransmitted queryinformation cleanup",
+            "dataretransmitted queryinformation cleanup close",
+            "create kernel_network_task_tcpip dataretransmitted cleanup",
+            "read read create kernel_network_task_tcpip"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            54.0,
+            0.0,
+            22.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.007776030090124486,
+            -0.006617093623513312,
+            -0.005942992580828417,
+            -0.005869776019633264,
+            -0.005486207123764189
+          ],
+          "lime_weights": [
+            -0.00346228331326231,
+            -0.001958099164132033,
+            0.0018262624808020218,
+            -0.001600543985632028,
+            -0.00156509029424504
+          ],
+          "shap_masked_confidence": 0.16320922072064925,
+          "lime_masked_confidence": 0.13635116211259066,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 178,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_make-joke.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.36369773781794706,
+          "shap_abs_drop": 0.0006666666666666488,
+          "lime_abs_drop": -0.0008571428571428341,
+          "shap_top_k_features": [
+            "closekeys openkey closekeys openkey",
+            "openkey openkey closekeys openkey",
+            "openkey closekeys openkey closekeys",
+            "openkey closekeys openkey querykey",
+            "closekeys openkey create queryinformation"
+          ],
+          "lime_top_k_features": [
+            "datasent imageload imageload create",
+            "queryvaluekey imageload closekeys querykey",
+            "imageload cleanup imageunload create",
+            "cpubaseprioritychange openkey querykey querykey",
+            "openkey querykey cpubaseprioritychange openkey"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            14.0,
+            0.0,
+            4.0,
+            1.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            2.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.01214391311797499,
+            -0.01063002139123455,
+            -0.007425943068785728,
+            -0.007134006908462425,
+            -0.006945387891819337
+          ],
+          "lime_weights": [
+            -0.0014715915285004556,
+            -0.0014422277746351958,
+            0.0013214317229702436,
+            -0.0011929206971589444,
+            -0.0011446429534102509
+          ],
+          "shap_masked_confidence": 0.3630310711512804,
+          "lime_masked_confidence": 0.3645548806750899,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 274,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_pt_toolkit_logs_obfupv_2.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.38266099453583197,
+          "shap_abs_drop": 0.025146633653376382,
+          "lime_abs_drop": 0.0023333333333334094,
+          "shap_top_k_features": [
+            "openkey openkey closekeys querykey",
+            "closekeys openkey closekeys openkey",
+            "openkey openkey closekeys openkey",
+            "cleanup close read read",
+            "create read read create"
+          ],
+          "lime_top_k_features": [
+            "create kernel_network_task_tcpip datasent threadstop",
+            "imageload imageunload queryinformation cleanup",
+            "create kernel_network_task_tcpip datareceived read",
+            "threadstart start cpubaseprioritychange read",
+            "imageload imageload imageunload queryinformation"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            4.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.008690593321437632,
+            -0.006871781203388138,
+            -0.006292138610866118,
+            0.005818653704248504,
+            0.005786086611511223
+          ],
+          "lime_weights": [
+            -0.0025692511672745916,
+            0.0013543291289821837,
+            -0.0011988936658594348,
+            -0.0011818579008981982,
+            0.0011547572339676555
+          ],
+          "shap_masked_confidence": 0.3575143608824556,
+          "lime_masked_confidence": 0.38032766120249856,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 12,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_save-screenshot.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.5345660685272451,
+          "shap_abs_drop": 0.16308494270651147,
+          "lime_abs_drop": 0.0059649122807017285,
+          "shap_top_k_features": [
+            "closekeys openkey closekeys openkey",
+            "closekeys openkey create queryinformation",
+            "openkey closekeys openkey create",
+            "openkey openkey closekeys openkey",
+            "openkey closekeys openkey closekeys"
+          ],
+          "lime_top_k_features": [
+            "querykey closekeys openkey enumeratekey",
+            "start create imageload threadstop",
+            "createnewfile namecreate setinformation setinformation",
+            "enumeratevaluekey closekeys closekeys write",
+            "setinformation setinformation create create"
+          ],
+          "shap_top_k_values": [
+            7.0,
+            12.0,
+            10.0,
+            25.0,
+            8.0
+          ],
+          "lime_top_k_values": [
+            8.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.020346108362673476,
+            0.018279334143661573,
+            0.016838437732540113,
+            0.01346690899690202,
+            0.010189092077530404
+          ],
+          "lime_weights": [
+            0.0025798975366977594,
+            0.002192986122273109,
+            -0.0021565738615136713,
+            0.001965833627738101,
+            0.0016815485071135748
+          ],
+          "shap_masked_confidence": 0.3714811258207336,
+          "lime_masked_confidence": 0.5286011562465434,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 36,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_farag2_utilities_logs_get-attribute.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.5881030654007009,
+          "shap_abs_drop": 0.13952666105122818,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "closekeys openkey closekeys openkey",
+            "openkey openkey closekeys querykey",
+            "openkey closekeys openkey create",
+            "closekeys openkey create queryinformation",
+            "openkey closekeys openkey closekeys"
+          ],
+          "lime_top_k_features": [
+            "queryinformation read cleanup kernel_network_task_tcpip",
+            "openkey querykey kernel_network_task_tcpip datareceived",
+            "cleanup kernel_network_task_tcpip datareceived querykey",
+            "read cleanup kernel_network_task_tcpip datareceived",
+            "create queryvaluekey kernel_network_task_tcpip datasent"
+          ],
+          "shap_top_k_values": [
+            7.0,
+            3.0,
+            11.0,
+            13.0,
+            7.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.019972384175957814,
+            0.019671616200397465,
+            0.01837823424059593,
+            0.01817171613112464,
+            0.013585695241157509
+          ],
+          "lime_weights": [
+            0.004062157408868012,
+            0.002718331216338324,
+            0.0025362706154515406,
+            0.0023855857060197058,
+            0.0023332293714190314
+          ],
+          "shap_masked_confidence": 0.4485764043494727,
+          "lime_masked_confidence": 0.5881030654007009,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 4,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_list-latest-tags.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.6036940412729678,
+          "shap_abs_drop": 0.03554518576661425,
+          "lime_abs_drop": 0.009999999999999898,
+          "shap_top_k_features": [
+            "openkey openkey closekeys querykey",
+            "create read read create",
+            "imageunload imageunload imageunload processstop",
+            "threadstart start threadstop stop",
+            "closekeys openkey closekeys openkey"
+          ],
+          "lime_top_k_features": [
+            "create create threadstop stop",
+            "read create close read",
+            "close imageload queryinformation create",
+            "cleanup threadstop stop imageunload",
+            "imageload create queryinformation processstart"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            15.0,
+            40.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            5.0,
+            1.0,
+            13.0,
+            5.0,
+            6.0
+          ],
+          "shap_importance_scores": [
+            0.007679691709089696,
+            0.007142669450312837,
+            0.006202391195798782,
+            0.005828483272988478,
+            -0.005808245813930455
+          ],
+          "lime_weights": [
+            0.0021304389514063987,
+            0.0019120072649357201,
+            0.0013685847556602281,
+            -0.0011155876327500534,
+            0.000919069250761372
+          ],
+          "shap_masked_confidence": 0.5681488555063535,
+          "lime_masked_confidence": 0.5936940412729679,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 136,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_measure-bubblesort.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.651032651588172,
+          "shap_abs_drop": 0.16157931367586098,
+          "lime_abs_drop": -0.0020000000000000018,
+          "shap_top_k_features": [
+            "closekeys openkey create queryinformation",
+            "closekeys openkey closekeys openkey",
+            "openkey closekeys openkey create",
+            "openkey openkey closekeys querykey",
+            "openkey openkey closekeys openkey"
+          ],
+          "lime_top_k_features": [
+            "enumeratekey querykey closekeys enumeratekey",
+            "datareceived kernel_network_task_tcpip datasent read",
+            "querykey closekeys enumeratekey openkey",
+            "queryvaluekey closekeys read threadstop",
+            "datasent read create queryinformation"
+          ],
+          "shap_top_k_values": [
+            10.0,
+            7.0,
+            9.0,
+            3.0,
+            22.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.020715361157494953,
+            0.020359569429876954,
+            0.01591163193788816,
+            0.015871514387984006,
+            0.013393360529380515
+          ],
+          "lime_weights": [
+            0.0036516063123021325,
+            0.003515597019980279,
+            0.0031614261171781883,
+            0.0027682811355460176,
+            0.0023352278360375036
+          ],
+          "shap_masked_confidence": 0.48945333791231105,
+          "lime_masked_confidence": 0.653032651588172,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        }
+      ]
+    },
+    "xgboost": {
+      "5": [
+        {
+          "sample_idx": 205,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_getparentchild.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.006962631829082966,
+          "shap_abs_drop": -0.0645279586315155,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "close read read read",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "openkey querykey enumeratekey enumeratekey"
+          ],
+          "lime_top_k_features": [
+            "kernel_network_task_udpip datareceivedoverudpprotocol threadstop stop",
+            "start imageunload imageunload threadstop",
+            "datasent kernel_network_task_tcpip datareceived cleanup",
+            "kernel_network_task_tcpip datareceived kernel_network_task_udpip datareceivedoverudpprotocol",
+            "cleanup kernel_network_task_tcpip datareceived kernel_network_task_tcpip"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.07162646831008442,
+            -0.03921949613266172,
+            -0.03891869702120812,
+            -0.03364295476696907,
+            -0.018616337189482315
+          ],
+          "lime_weights": [
+            -0.027754149922624618,
+            -0.017317659330627524,
+            -0.014583885948648952,
+            0.01352481789494057,
+            -0.013137527014964876
+          ],
+          "shap_masked_confidence": 0.07149059325456619,
+          "lime_masked_confidence": 0.006962631829082966,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 280,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_mafia_logs_get-keystrokes.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.035892684012651443,
+          "shap_abs_drop": -0.07081679999828339,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "create create create create",
+            "threadstart start threadstop stop"
+          ],
+          "lime_top_k_features": [
+            "imageunload close cleanup close",
+            "cleanup kernel_network_task_tcpip datasent threadstop",
+            "close imageunload create create",
+            "imageunload close threadstop stop",
+            "cleanup kernel_network_task_tcpip datareceived threadstop"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            121.0,
+            10.0
+          ],
+          "lime_top_k_values": [
+            2.0,
+            1.0,
+            6.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.07352576645374233,
+            -0.04426175947396894,
+            0.03223207564160897,
+            -0.022768258894315836,
+            -0.01762964233479561
+          ],
+          "lime_weights": [
+            -0.03668592663435807,
+            -0.01984003478499155,
+            -0.01923977100215695,
+            -0.015383157957495185,
+            -0.011917405021084909
+          ],
+          "shap_masked_confidence": 0.10670948028564453,
+          "lime_masked_confidence": 0.035892684012651443,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 224,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_sysmon2csv.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.009391644969582558,
+          "shap_abs_drop": -0.1662023663520813,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "close read read read",
+            "create create create create"
+          ],
+          "lime_top_k_features": [
+            "create kernel_network_task_tcpip dataretransmitted cleanup",
+            "dataretransmitted queryinformation cleanup close",
+            "datasent kernel_network_task_tcpip datareceived cleanup",
+            "read create kernel_network_task_tcpip dataretransmitted",
+            "kernel_network_task_tcpip datasent imageunload create"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            4.0,
+            0.0,
+            235.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.07283005721121187,
+            -0.037718555858133274,
+            -0.03110994286520664,
+            -0.022905000785460535,
+            -0.01662231150568018
+          ],
+          "lime_weights": [
+            -0.016362973406424765,
+            -0.01475406526465321,
+            -0.013890081118086046,
+            0.009684703011873491,
+            0.008952197516945305
+          ],
+          "shap_masked_confidence": 0.1755940169095993,
+          "lime_masked_confidence": 0.009391644969582558,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 178,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_make-joke.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.006212766282260418,
+          "shap_abs_drop": -0.28196367621421814,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "openkey querykey enumeratekey enumeratekey",
+            "openkey openkey closekeys querykey"
+          ],
+          "lime_top_k_features": [
+            "cpubaseprioritychange openkey querykey querykey",
+            "close kernel_network_task_tcpip datasent close",
+            "threadstart start queryvaluekey imageload",
+            "imageload queryinformation read imageload",
+            "closekeys openkey querykey cpubaseprioritychange"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            1.0,
+            5.0,
+            9.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.09968988790763796,
+            -0.054831819218938815,
+            -0.03216163912045312,
+            -0.02470852621939055,
+            -0.01732427326198294
+          ],
+          "lime_weights": [
+            -0.02335044638348891,
+            -0.01673916608262587,
+            0.01602979883563973,
+            0.011056447346764506,
+            -0.009581160985427231
+          ],
+          "shap_masked_confidence": 0.28817644715309143,
+          "lime_masked_confidence": 0.006212766282260418,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 274,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_pt_toolkit_logs_obfupv_2.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.3601128160953522,
+          "shap_abs_drop": 0.2873072624206543,
+          "lime_abs_drop": 0.01599574089050293,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "create read read create",
+            "openkey openkey closekeys querykey",
+            "closekeys openkey closekeys openkey",
+            "close read read read"
+          ],
+          "lime_top_k_features": [
+            "cpubaseprioritychange read read read",
+            "cleanup kernel_network_task_tcpip datareceived create",
+            "close imageload direnum cleanup",
+            "kernel_network_task_tcpip datareceived read create",
+            "threadstart start cpubaseprioritychange read"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            4.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.0742782047030139,
+            0.06475922116186072,
+            0.05280577200293791,
+            -0.04366729145933703,
+            0.03570846572126172
+          ],
+          "lime_weights": [
+            -0.03503667246122212,
+            0.03347049934787997,
+            -0.026155153110811995,
+            -0.02293857217149125,
+            -0.020034001896581208
+          ],
+          "shap_masked_confidence": 0.07280556857585907,
+          "lime_masked_confidence": 0.34411707520484924,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 12,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_save-screenshot.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.8529456853866577,
+          "shap_abs_drop": 0.3937552869319916,
+          "lime_abs_drop": 0.754629909992218,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "openkey openkey closekeys querykey",
+            "closekeys openkey openkey closekeys"
+          ],
+          "lime_top_k_features": [
+            "openkey closekeys openkey create",
+            "enumeratevaluekey closekeys closekeys write",
+            "createnewfile namecreate setinformation setinformation",
+            "setinformation setinformation create create",
+            "openkey enumeratekey closekeys read"
+          ],
+          "shap_top_k_values": [
+            10.0,
+            7.0,
+            0.0,
+            19.0,
+            25.0
+          ],
+          "lime_top_k_values": [
+            10.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.27523753571492,
+            0.08321971911581644,
+            0.05074220118159763,
+            -0.032937596406581775,
+            -0.03059256009771269
+          ],
+          "lime_weights": [
+            0.19588606877493417,
+            0.012474653241534388,
+            -0.007786494757772155,
+            -0.00640664376149985,
+            -0.005872922133108249
+          ],
+          "shap_masked_confidence": 0.45919039845466614,
+          "lime_masked_confidence": 0.0983157679438591,
+          "feature_overlap_count": 1,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 36,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_farag2_utilities_logs_get-attribute.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.952173113822937,
+          "shap_abs_drop": 0.8613000512123108,
+          "lime_abs_drop": 0.4937382638454437,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "openkey openkey closekeys querykey",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "read read read read"
+          ],
+          "lime_top_k_features": [
+            "openkey closekeys openkey create",
+            "queryinformation read cleanup kernel_network_task_tcpip",
+            "read cleanup kernel_network_task_tcpip datareceived",
+            "create queryvaluekey kernel_network_task_tcpip datasent",
+            "kernel_network_task_tcpip datareceived createkey querykey"
+          ],
+          "shap_top_k_values": [
+            11.0,
+            3.0,
+            7.0,
+            0.0,
+            41.0
+          ],
+          "lime_top_k_values": [
+            11.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.2341974580510022,
+            0.10937503289077208,
+            0.08706450064229515,
+            0.04369989453381701,
+            -0.0368591083146994
+          ],
+          "lime_weights": [
+            0.19644073645813134,
+            0.027607029790358034,
+            0.016322575104610926,
+            -0.011658963071805098,
+            -0.009593675091113491
+          ],
+          "shap_masked_confidence": 0.09087304025888443,
+          "lime_masked_confidence": 0.4584348499774933,
+          "feature_overlap_count": 1,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 4,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_list-latest-tags.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.7144445180892944,
+          "shap_abs_drop": 0.5174396634101868,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "openkey openkey closekeys querykey",
+            "create read read create",
+            "threadstart start threadstop stop",
+            "openkey closekeys openkey create",
+            "close read read read"
+          ],
+          "lime_top_k_features": [
+            "create read create cleanup",
+            "datareceived imageload create queryinformation",
+            "create create create threadstop",
+            "cleanup threadstop stop imageunload",
+            "imageload create queryinformation processstart"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            40.0,
+            0.0,
+            1.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            5.0,
+            5.0,
+            6.0
+          ],
+          "shap_importance_scores": [
+            0.0722367784551608,
+            0.056993161376332376,
+            0.04874002326997494,
+            -0.04274697567252457,
+            0.029274064314871874
+          ],
+          "lime_weights": [
+            0.023449956126972333,
+            0.022983564468060897,
+            0.015360252144221645,
+            -0.010712866451041065,
+            -0.009746197155085339
+          ],
+          "shap_masked_confidence": 0.19700485467910767,
+          "lime_masked_confidence": 0.7144445180892944,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 136,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_measure-bubblesort.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.7098895311355591,
+          "shap_abs_drop": 0.20276427268981934,
+          "lime_abs_drop": 0.22616541385650635,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "openkey openkey closekeys querykey",
+            "closekeys openkey closekeys openkey",
+            "closekeys setinformationkey queryvaluekey closekeys",
+            "create read read create"
+          ],
+          "lime_top_k_features": [
+            "openkey closekeys openkey create",
+            "openkey queryvaluekey setinformationkey querykey",
+            "setinformationkey openkey openkey closekeys",
+            "datareceived kernel_network_task_tcpip datasent read",
+            "setinformationkey queryvaluekey querykey closekeys"
+          ],
+          "shap_top_k_values": [
+            9.0,
+            3.0,
+            7.0,
+            1.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            9.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.18471901376371597,
+            0.08302866235964725,
+            0.08196193148200978,
+            -0.05850542451697785,
+            0.05727410471324065
+          ],
+          "lime_weights": [
+            0.19580477035517446,
+            0.023280630032590465,
+            -0.01619729326004256,
+            -0.01394107692589025,
+            0.006042942731330811
+          ],
+          "shap_masked_confidence": 0.5071252584457397,
+          "lime_masked_confidence": 0.48372411727905273,
+          "feature_overlap_count": 1,
+          "winner": "LIME"
+        }
+      ]
+    },
+    "lightgbm": {
+      "5": [
+        {
+          "sample_idx": 205,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_getparentchild.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 1.9015071599677217e-05,
+          "shap_abs_drop": -0.002964530250838345,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "closekeys openkey closekeys openkey",
+            "close read read read",
+            "create read read create",
+            "openkey closekeys openkey closekeys"
+          ],
+          "lime_top_k_features": [
+            "kernel_network_task_udpip datareceivedoverudpprotocol threadstop stop",
+            "start imageunload imageunload threadstop",
+            "datasent kernel_network_task_tcpip datareceived imageload",
+            "kernel_network_task_tcpip datareceived kernel_network_task_udpip datareceivedoverudpprotocol",
+            "datasent kernel_network_task_tcpip datareceived cleanup"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.07701729864225296,
+            -0.042920947121320614,
+            -0.03073332294759439,
+            -0.029022320733995334,
+            -0.012333613657144709
+          ],
+          "lime_weights": [
+            -0.02933050314327624,
+            -0.022808237759848853,
+            -0.018136942287908898,
+            0.01795396158785429,
+            -0.006660882905257107
+          ],
+          "shap_masked_confidence": 0.0029835453224380222,
+          "lime_masked_confidence": 1.9015071599677217e-05,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 280,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_mafia_logs_get-keystrokes.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.021796410996766633,
+          "shap_abs_drop": -0.15860405958837248,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "create create create create",
+            "querykey enumeratekey enumeratekey closekeys"
+          ],
+          "lime_top_k_features": [
+            "imageunload close cleanup close",
+            "close imageunload create create",
+            "imageunload close threadstop stop",
+            "cleanup kernel_network_task_tcpip datasent threadstop",
+            "cleanup imageunload close read"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            121.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            2.0,
+            6.0,
+            1.0,
+            1.0,
+            2.0
+          ],
+          "shap_importance_scores": [
+            -0.09464581050174482,
+            -0.04953660048831827,
+            0.03696002467540878,
+            -0.0230802739782344,
+            -0.017267223380678477
+          ],
+          "lime_weights": [
+            -0.03027784218242562,
+            -0.026798118472201034,
+            -0.025197889807429312,
+            -0.0223011716167694,
+            0.01747461039609147
+          ],
+          "shap_masked_confidence": 0.1804004705851391,
+          "lime_masked_confidence": 0.021796410996766633,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 224,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_sysmon2csv.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 5.352902738196895e-05,
+          "shap_abs_drop": -0.10773394775117724,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "close read read read",
+            "openkey closekeys openkey closekeys"
+          ],
+          "lime_top_k_features": [
+            "read create kernel_network_task_tcpip dataretransmitted",
+            "dataretransmitted cleanup close cleanup",
+            "kernel_network_task_tcpip datasent imageunload create",
+            "create kernel_network_task_tcpip dataretransmitted cleanup",
+            "read read create kernel_network_task_tcpip"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            4.0,
+            0.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.079286323382021,
+            -0.041149992337163314,
+            -0.0343320769660269,
+            -0.017624819594606364,
+            -0.012384156119888207
+          ],
+          "lime_weights": [
+            0.01989476244101742,
+            -0.018725336519186304,
+            0.014865131757871712,
+            -0.014601402737385165,
+            -0.010910192494567778
+          ],
+          "shap_masked_confidence": 0.10778747677855921,
+          "lime_masked_confidence": 5.352902738196895e-05,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 178,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_make-joke.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.00019418316496952188,
+          "shap_abs_drop": -0.16769245684037457,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "openkey closekeys openkey closekeys",
+            "openkey openkey closekeys querykey"
+          ],
+          "lime_top_k_features": [
+            "closekeys openkey querykey cpubaseprioritychange",
+            "openkey querykey cpubaseprioritychange openkey",
+            "close create queryinformation write",
+            "close kernel_network_task_tcpip datasent close",
+            "querykey cpubaseprioritychange openkey querykey"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            9.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            13.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.09875397521082728,
+            -0.04891407727148572,
+            -0.02989607275191537,
+            -0.022770099993842368,
+            -0.01765765558687696
+          ],
+          "lime_weights": [
+            -0.016713064993694255,
+            0.015593397543255968,
+            -0.013620001979414924,
+            0.012701085401538281,
+            -0.012334537241728142
+          ],
+          "shap_masked_confidence": 0.1678866400053441,
+          "lime_masked_confidence": 0.00019418316496952188,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 274,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_pt_toolkit_logs_obfupv_2.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.2810949466746877,
+          "shap_abs_drop": 0.2106560366915407,
+          "lime_abs_drop": 0.02327038913714674,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "openkey openkey closekeys querykey",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "read read read read"
+          ],
+          "lime_top_k_features": [
+            "start create kernel_network_task_tcpip datasent",
+            "read kernel_network_task_tcpip datareceived create",
+            "kernel_network_task_tcpip datareceived read create",
+            "close imageunload cleanup close",
+            "imageload imageunload queryinformation cleanup"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            556.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            2.0,
+            3.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.0851102253737483,
+            0.04675698346496648,
+            -0.043035612382266226,
+            0.04303177981496284,
+            0.026210901397164362
+          ],
+          "lime_weights": [
+            -0.02753209604125566,
+            -0.023437357947278154,
+            -0.016955662318287292,
+            -0.016705775187585616,
+            0.013755035657265506
+          ],
+          "shap_masked_confidence": 0.070438909983147,
+          "lime_masked_confidence": 0.25782455753754097,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 12,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_save-screenshot.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.9862286730905933,
+          "shap_abs_drop": 0.9847574070228997,
+          "lime_abs_drop": 0.9528131405421252,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "openkey closekeys openkey closekeys",
+            "closekeys queryvaluekey closekeys queryinformation"
+          ],
+          "lime_top_k_features": [
+            "openkey closekeys openkey create",
+            "enumeratevaluekey closekeys closekeys write",
+            "namecreate setinformation setinformation create",
+            "createnewfile namecreate setinformation setinformation",
+            "create imageload threadstop stop"
+          ],
+          "shap_top_k_values": [
+            10.0,
+            7.0,
+            0.0,
+            8.0,
+            1.0
+          ],
+          "lime_top_k_values": [
+            10.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.2721852791469204,
+            0.07418128903433704,
+            0.04361753261349692,
+            0.03398989671540118,
+            -0.032348744299271696
+          ],
+          "lime_weights": [
+            0.17707250075743614,
+            0.025660116587495608,
+            -0.018618652595392318,
+            0.018282382426319025,
+            0.011015838534381076
+          ],
+          "shap_masked_confidence": 0.0014712660676935235,
+          "lime_masked_confidence": 0.03341553254846808,
+          "feature_overlap_count": 1,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 36,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_farag2_utilities_logs_get-attribute.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.9931830331685679,
+          "shap_abs_drop": 0.9825240474768198,
+          "lime_abs_drop": 0.06434387026052901,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "openkey openkey closekeys querykey",
+            "closekeys openkey closekeys openkey",
+            "create read read create",
+            "openkey closekeys openkey closekeys"
+          ],
+          "lime_top_k_features": [
+            "openkey closekeys openkey create",
+            "queryinformation read cleanup kernel_network_task_tcpip",
+            "create create queryvaluekey kernel_network_task_tcpip",
+            "create queryvaluekey kernel_network_task_tcpip datasent",
+            "openkey read kernel_network_task_tcpip datasent"
+          ],
+          "shap_top_k_values": [
+            11.0,
+            3.0,
+            7.0,
+            0.0,
+            7.0
+          ],
+          "lime_top_k_values": [
+            11.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.2072744956475428,
+            0.1047858869906412,
+            0.08166262137703076,
+            0.04654129138662541,
+            0.04002073110894175
+          ],
+          "lime_weights": [
+            0.17539674776855146,
+            0.026365046490351228,
+            0.025209816466553844,
+            -0.013362402196699314,
+            -0.008146262576660727
+          ],
+          "shap_masked_confidence": 0.010658985691748148,
+          "lime_masked_confidence": 0.9288391629080389,
+          "feature_overlap_count": 1,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 4,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_list-latest-tags.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.8429281553950398,
+          "shap_abs_drop": 0.007236453356087913,
+          "lime_abs_drop": 0.0,
+          "shap_top_k_features": [
+            "openkey openkey closekeys querykey",
+            "create read read create",
+            "threadstart start threadstop stop",
+            "openkey closekeys openkey create",
+            "create create create create"
+          ],
+          "lime_top_k_features": [
+            "datareceived imageload create queryinformation",
+            "processstart start querysecurity create",
+            "create threadstop stop imageunload",
+            "create create create threadstop",
+            "cleanup threadstop stop imageunload"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            40.0,
+            0.0,
+            126.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            14.0,
+            4.0,
+            5.0,
+            5.0
+          ],
+          "shap_importance_scores": [
+            0.0779901125077518,
+            0.0667820609718009,
+            0.030499792204224333,
+            -0.028344487398244706,
+            -0.026588775159293573
+          ],
+          "lime_weights": [
+            0.030728474174065122,
+            0.029621202144333888,
+            -0.017250819497714356,
+            0.01587976403943513,
+            -0.015121722736802193
+          ],
+          "shap_masked_confidence": 0.8356917020389519,
+          "lime_masked_confidence": 0.8429281553950398,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 136,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_measure-bubblesort.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.7426760071788406,
+          "shap_abs_drop": 0.6381273971704419,
+          "lime_abs_drop": 0.34056907227490296,
+          "shap_top_k_features": [
+            "openkey closekeys openkey create",
+            "closekeys openkey closekeys openkey",
+            "openkey openkey closekeys querykey",
+            "closekeys setinformationkey queryvaluekey closekeys",
+            "create read read create"
+          ],
+          "lime_top_k_features": [
+            "openkey closekeys openkey create",
+            "openkey queryvaluekey setinformationkey querykey",
+            "setinformationkey openkey openkey closekeys",
+            "datasent read create queryinformation",
+            "closekeys read threadstop stop"
+          ],
+          "shap_top_k_values": [
+            9.0,
+            7.0,
+            3.0,
+            1.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            9.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.18393660136952897,
+            0.08386425552393079,
+            0.08157987612071751,
+            -0.04511931234564513,
+            0.039028138843480775
+          ],
+          "lime_weights": [
+            0.17496411909533416,
+            0.03031138595866146,
+            -0.029194345647902336,
+            0.018781805944243994,
+            0.010654223372492205
+          ],
+          "shap_masked_confidence": 0.10454861000839881,
+          "lime_masked_confidence": 0.4021069349039377,
+          "feature_overlap_count": 1,
+          "winner": "SHAP"
+        }
+      ]
+    },
+    "mlp": {
+      "5": [
+        {
+          "sample_idx": 205,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_getparentchild.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.4341820950856911,
+          "shap_abs_drop": 0.0,
+          "lime_abs_drop": 0.06978852239028138,
+          "shap_top_k_features": [
+            "enumeratevaluekey enumeratevaluekey closekeys kernel_network_task_tcpip",
+            "queryvaluekey create fsctl cleanup",
+            "openkey closekeys create create",
+            "querykey openkey create openkey",
+            "create querykey openkey setinformationkey"
+          ],
+          "lime_top_k_features": [
+            "imageload imageunload imageunload imageload",
+            "close create imageload kernel_network_task_tcpip",
+            "create kernel_network_task_tcpip dataretransmitted create",
+            "kernel_network_task_udpip datareceivedoverudpprotocol threadstop stop",
+            "start imageunload imageunload threadstop"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            4.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.12781264615557564,
+            0.07687402811396316,
+            -0.06333268438852362,
+            -0.04927961158973129,
+            -0.03293726996559326
+          ],
+          "lime_weights": [
+            0.038643746443148816,
+            -0.03385071638011061,
+            0.025265853897693452,
+            -0.025205212555964637,
+            -0.02131650905432939
+          ],
+          "shap_masked_confidence": 0.4341820950856911,
+          "lime_masked_confidence": 0.36439357269540973,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 280,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_mafia_logs_get-keystrokes.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.18110589921489004,
+          "shap_abs_drop": 0.0,
+          "lime_abs_drop": -0.018793520084964016,
+          "shap_top_k_features": [
+            "close imageload cleanup close",
+            "create querysecurity cleanup querysecurity",
+            "openkey querykey openkey querykey",
+            "imageload cleanup kernel_network_task_tcpip datasent",
+            "imageload openkey create create"
+          ],
+          "lime_top_k_features": [
+            "imageunload create create direnum",
+            "close imageunload create create",
+            "imageload imageload cleanup imageunload",
+            "imageunload close cleanup close",
+            "write queryinformation cleanup kernel_network_task_tcpip"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            6.0,
+            6.0,
+            2.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.058304740823430644,
+            -0.035603529075326434,
+            -0.024545455256326853,
+            -0.023905894798289307,
+            -0.021895550637517892
+          ],
+          "lime_weights": [
+            0.055550745564405354,
+            -0.04136221188991533,
+            -0.026282580371052695,
+            -0.014978852005249909,
+            -0.014913232200796123
+          ],
+          "shap_masked_confidence": 0.18110589921489004,
+          "lime_masked_confidence": 0.19989941929985405,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 224,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_sysmon2csv.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.27063084090337325,
+          "shap_abs_drop": -0.6650957925613004,
+          "lime_abs_drop": 0.00890566919291852,
+          "shap_top_k_features": [
+            "queryinformation cleanup close create",
+            "create openkey imageload cleanup",
+            "write write openkey queryvaluekey",
+            "enumeratevaluekey enumeratevaluekey read closekeys",
+            "queryinformation querykey querykey closekeys"
+          ],
+          "lime_top_k_features": [
+            "read read create kernel_network_task_tcpip",
+            "kernel_network_task_tcpip dataretransmitted cleanup close",
+            "kernel_network_task_tcpip datasent imageunload create",
+            "datareceived cleanup close create",
+            "createnewfile namecreate read cleanup"
+          ],
+          "shap_top_k_values": [
+            985.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            -0.12012415255949781,
+            -0.09228494660704106,
+            -0.08448465352910622,
+            0.05945354449568508,
+            0.058755469264536515
+          ],
+          "lime_weights": [
+            0.05307321975826584,
+            -0.04455790753584216,
+            -0.037162704920304754,
+            -0.03132452655328987,
+            -0.028304178865763516
+          ],
+          "shap_masked_confidence": 0.9357266334646737,
+          "lime_masked_confidence": 0.26172517171045473,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 178,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_psbits_make-joke.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.4181530467224089,
+          "shap_abs_drop": 0.12415539476009685,
+          "lime_abs_drop": 0.06440633758666842,
+          "shap_top_k_features": [
+            "create openkey closekeys cleanup",
+            "queryvaluekey openkey closekeys queryvaluekey",
+            "read read read read",
+            "queryvaluekey openkey enumeratekey closekeys",
+            "openkey create querysecurity cleanup"
+          ],
+          "lime_top_k_features": [
+            "queryvaluekey queryvaluekey imageload closekeys",
+            "imageload create imageunload create",
+            "create queryinformation write queryinformation",
+            "create kernel_network_task_tcpip datareceived queryinformation",
+            "openkey querykey cpubaseprioritychange openkey"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            76.0,
+            0.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            2.0,
+            1.0,
+            13.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.042009197401025676,
+            -0.031908257128586984,
+            -0.027760544006561663,
+            0.025248839819525994,
+            0.018216850303985684
+          ],
+          "lime_weights": [
+            0.046552365182803916,
+            -0.0374319773360582,
+            0.030706934364265064,
+            -0.02630525932845348,
+            -0.011200282926565526
+          ],
+          "shap_masked_confidence": 0.29399765196231203,
+          "lime_masked_confidence": 0.35374670913574047,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 274,
+          "sample_name": "Processed_SUBGRAPH_P3_malware_pt_toolkit_logs_obfupv_2.pickle",
+          "true_label": 1,
+          "sample_category": "wrong_fn",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.2099078910618519,
+          "shap_abs_drop": 0.0,
+          "lime_abs_drop": 0.035054722869098304,
+          "shap_top_k_features": [
+            "create read read createnewfile",
+            "read read write write",
+            "closekeys querykey queryvaluekey querykey",
+            "cleanup queryinformation enumeratevaluekey close",
+            "cleanup queryvaluekey openkey closekeys"
+          ],
+          "lime_top_k_features": [
+            "read kernel_network_task_tcpip datareceived create",
+            "datareceived read create queryinformation",
+            "start create kernel_network_task_tcpip datasent",
+            "create read read threadstop",
+            "kernel_network_task_tcpip datareceived read create"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            2.0,
+            1.0,
+            1.0,
+            2.0
+          ],
+          "shap_importance_scores": [
+            -0.09441844754296286,
+            -0.04818518588306481,
+            -0.020386860068200317,
+            -0.012798157938753912,
+            -0.011286448641203555
+          ],
+          "lime_weights": [
+            -0.03621198418515712,
+            -0.03209321547765919,
+            -0.027304111387131336,
+            -0.02454087332924086,
+            -0.021165168652409905
+          ],
+          "shap_masked_confidence": 0.2099078910618519,
+          "lime_masked_confidence": 0.1748531681927536,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 12,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_save-screenshot.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.8157595418990278,
+          "shap_abs_drop": 0.30881946779511105,
+          "lime_abs_drop": -0.0018167160341823196,
+          "shap_top_k_features": [
+            "querykey openkey closekeys setinformationkey",
+            "read read read read",
+            "start create direnum direnum",
+            "queryinformation unknown unknown close",
+            "setvaluekey setvaluekey closekeys querykey"
+          ],
+          "lime_top_k_features": [
+            "openkey enumeratevaluekey querykey querykey",
+            "openkey create querykey setinformationkey",
+            "openkey enumeratekey querykey queryvaluekey",
+            "createnewfile namecreate setinformation setinformation",
+            "close read queryvaluekey read"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            224.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            2.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.09821895614317958,
+            0.04804132546936657,
+            0.04731260743682285,
+            0.045272457662508585,
+            0.04421279009160316
+          ],
+          "lime_weights": [
+            0.057565263999006765,
+            -0.040388266926138304,
+            0.03960705859690323,
+            -0.03341728596815894,
+            -0.033113042192459224
+          ],
+          "shap_masked_confidence": 0.5069400741039167,
+          "lime_masked_confidence": 0.8175762579332101,
+          "feature_overlap_count": 0,
+          "winner": "SHAP"
+        },
+        {
+          "sample_idx": 36,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_farag2_utilities_logs_get-attribute.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.7869548239960649,
+          "shap_abs_drop": -0.0008150594211977502,
+          "lime_abs_drop": 0.010531193094634461,
+          "shap_top_k_features": [
+            "direnum create create cleanup",
+            "cpubaseprioritychange create createnewfile namecreate",
+            "imageload queryinformation imageload queryinformation",
+            "enumeratekey closekeys imageload querykey",
+            "querykey openkey create read"
+          ],
+          "lime_top_k_features": [
+            "openkey querykey kernel_network_task_tcpip datareceived",
+            "datasent kernel_network_task_tcpip datasent threadstop",
+            "querykey openkey read kernel_network_task_tcpip",
+            "querykey kernel_network_task_tcpip datareceived create",
+            "create queryvaluekey kernel_network_task_tcpip datasent"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          "shap_importance_scores": [
+            0.07282254601103753,
+            0.04670766516643074,
+            0.046173635507543616,
+            0.04239507056795283,
+            0.040018419210146365
+          ],
+          "lime_weights": [
+            0.03597030929367842,
+            0.03398323319616751,
+            -0.021462954443064914,
+            0.0185690450011333,
+            -0.015764803957668508
+          ],
+          "shap_masked_confidence": 0.7877698834172626,
+          "lime_masked_confidence": 0.7764236309014304,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 4,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_list-latest-tags.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.9993475667970058,
+          "shap_abs_drop": 0.00042110575120080096,
+          "lime_abs_drop": 0.0023624640055015522,
+          "shap_top_k_features": [
+            "cleanup create imageload imageload",
+            "closekeys openkey queryvaluekey queryinformation",
+            "write write cpuprioritychange create",
+            "create imageload imageload imageload",
+            "read querykey read openkey"
+          ],
+          "lime_top_k_features": [
+            "create imageload imageload imageload",
+            "kernel_network_task_tcpip datasent imageload queryinformation",
+            "create create threadstop stop",
+            "close queryinformation cleanup threadstop",
+            "create threadstop stop imageunload"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            20.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            20.0,
+            1.0,
+            5.0,
+            6.0,
+            4.0
+          ],
+          "shap_importance_scores": [
+            0.15917368349051975,
+            0.11913669797319665,
+            0.0966564795129208,
+            0.08863279257925441,
+            0.07154345308916357
+          ],
+          "lime_weights": [
+            0.043777390377867674,
+            0.02284555061293444,
+            0.022164623972251038,
+            0.018718738942077484,
+            -0.01729403521341928
+          ],
+          "shap_masked_confidence": 0.998926461045805,
+          "lime_masked_confidence": 0.9969851027915042,
+          "feature_overlap_count": 1,
+          "winner": "LIME"
+        },
+        {
+          "sample_idx": 136,
+          "sample_name": "Processed_SUBGRAPH_P3_benign_powershell-master_logs_measure-bubblesort.pickle",
+          "true_label": 0,
+          "sample_category": "wrong_fp",
+          "misclassified_by": [
+            "rf",
+            "xgboost",
+            "lightgbm",
+            "mlp"
+          ],
+          "original_confidence": 0.5896856427691981,
+          "shap_abs_drop": 0.0,
+          "lime_abs_drop": 0.12645515621992637,
+          "shap_top_k_features": [
+            "querykey create cleanup queryinformation",
+            "openkey queryvaluekey create direnum",
+            "create create create imageunload",
+            "write unknown create fsctl",
+            "write cpuprioritychange write read"
+          ],
+          "lime_top_k_features": [
+            "closekeys create imageload queryvaluekey",
+            "queryvaluekey closekeys read threadstop",
+            "closekeys enumeratekey querykey queryvaluekey",
+            "datareceived kernel_network_task_tcpip datasent read",
+            "closekeys openkey create queryinformation"
+          ],
+          "shap_top_k_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lime_top_k_values": [
+            1.0,
+            1.0,
+            9.0,
+            1.0,
+            10.0
+          ],
+          "shap_importance_scores": [
+            0.032896556736196195,
+            0.029353737523505518,
+            0.023016960187617744,
+            0.02152974033796646,
+            0.0161290907937394
+          ],
+          "lime_weights": [
+            -0.06723236702795263,
+            0.06640684670852315,
+            -0.04101127123252181,
+            0.040752672889130065,
+            0.03461111601456814
+          ],
+          "shap_masked_confidence": 0.5896856427691981,
+          "lime_masked_confidence": 0.46323048654927174,
+          "feature_overlap_count": 0,
+          "winner": "LIME"
+        }
+      ]
+    }
+  }
+}
