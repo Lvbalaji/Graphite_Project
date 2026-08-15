@@ -18,10 +18,8 @@ feature-representation ceiling, the central argument of the thesis.
 
 ## Requirements
 
-`comparative_analysis.py` imports the shared modules in `../core`
-(`parameter_parser.py`, `dataprocessor_graphs.py`, `graphite_n_gram.py`). Add the two
-lines below at the top of the script so those imports resolve, or run with
-`PYTHONPATH=core`:
+`comparative_analysis.py` imports the shared modules in `../core`. Add the two lines below
+at the top of the script so those imports resolve, or run with `PYTHONPATH=core`:
 
 ```python
 import sys, os
@@ -33,10 +31,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "core"))
 From the repository root:
 
 ```bash
-python RQ1/comparative_analysis.py \
-    --dataset-path dataset \
-    --classifier all \
-    --output-dir RQ1/results
+python RQ1/comparative_analysis.py --dataset-path dataset --classifier all --output-dir RQ1/results
 ```
 
 Run a single classifier instead of all four:
@@ -45,14 +40,16 @@ Run a single classifier instead of all four:
 python RQ1/comparative_analysis.py --dataset-path dataset --classifier lightgbm --output-dir RQ1/results
 ```
 
-## Outputs (written to results/)
+## Outputs
 
-- `rq1_results.json`: per-classifier metrics (accuracy, F1, AUC, false positive rate,
+Written to `results/`:
+
+- `rq1_results.json`: the per-classifier metrics (accuracy, F1, AUC, false positive rate,
   cross-validated F1).
 - `misclassification_overlap.json`: the false negatives and false positives each model
   produces, and the samples missed by more than one model.
-- `metric_comparison.png`, `cv_f1_comparison.png`, `roc_curves.png`, `fpr_comparison.png`,
-  `confusion_matrices.png`, `timing_comparison.png`.
+- The comparison figures (ROC curves, cross-validated F1, false positive rate, confusion
+  matrices, timing).
 
 ## Result
 
