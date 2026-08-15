@@ -1,0 +1,2866 @@
+{
+  "mode": "live",
+  "rq3_threshold_ms": 5000,
+  "results": [
+    {
+      "root_pid": "1048",
+      "image": "SilkETW",
+      "prediction": "BENIGN",
+      "confidence": 0.2951730375778358,
+      "t_detect_ms": 1448.5649089911021,
+      "t_explain_ms": 77.99425401026383,
+      "t_total_ms": 1526.559163001366,
+      "meets_threshold": true,
+      "nodes": 202,
+      "edges": 1404,
+      "node_kinds": {
+        "registry": 80,
+        "file": 113,
+        "thread": 8,
+        "process": 1
+      },
+      "shap": {
+        "t_explain_ms": 77.99425401026383,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "read read read read",
+            "shap_value": 1.2215406734096523,
+            "orig_value": 690.0,
+            "direction": "MALWARE",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "queryinformation read read read",
+            "shap_value": -0.5598442063487616,
+            "orig_value": 5.0,
+            "direction": "BENIGN",
+            "narrative": "The thread queried file metadata, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "feature": "File",
+            "shap_value": 0.3522604269941383,
+            "orig_value": 115.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (115 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 4,
+            "feature": "openkey setinformationkey closekeys closekeys",
+            "shap_value": 0.3215938384069957,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then modified registry key metadata, then closed a registry key handle, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 5,
+            "feature": "imageload imageload imageload imageload",
+            "shap_value": 0.22955724759605436,
+            "orig_value": 163.0,
+            "direction": "MALWARE",
+            "narrative": "The thread loaded a dll/executable image into memory, then loaded a dll/executable image into memory, then loaded a dll/executable image into memory, then loaded a dll/executable image into memory.",
+            "categories": [
+              "Process"
+            ],
+            "mitre": [
+              {
+                "id": "T1129",
+                "name": "Shared Modules",
+                "tactic": "Execution"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "close create direnum direnum",
+            "shap_value": 0.19154920985191007,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a file object, then created or opened a file/directory, then enumerated directory contents, then enumerated directory contents.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1083",
+                "name": "File and Directory Discovery",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 7,
+            "feature": "querykey openkey closekeys setinformationkey",
+            "shap_value": -0.1788577146746724,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread queried registry key information, then opened an existing registry key, then closed a registry key handle, then modified registry key metadata.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 8,
+            "feature": "read read create create",
+            "shap_value": 0.16474377270212465,
+            "orig_value": 2.0,
+            "direction": "MALWARE",
+            "narrative": "The thread read data from a file, then read data from a file, then created or opened a file/directory, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 9,
+            "feature": "openkey querykey openkey closekeys",
+            "shap_value": -0.15321448447818425,
+            "orig_value": 4.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then queried registry key information, then opened an existing registry key, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "closekeys querykey openkey querykey",
+            "shap_value": 0.14062510077953616,
+            "orig_value": 7.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a registry key handle, then queried registry key information, then opened an existing registry key, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          },
+          {
+            "id": "T1129",
+            "name": "Shared Modules",
+            "tactic": "Execution"
+          },
+          {
+            "id": "T1083",
+            "name": "File and Directory Discovery",
+            "tactic": "Discovery"
+          },
+          {
+            "id": "T1012",
+            "name": "Query Registry",
+            "tactic": "Discovery"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "6980",
+      "image": "WmiPrvSE",
+      "prediction": "BENIGN",
+      "confidence": 0.015670895813104043,
+      "t_detect_ms": 371.2965380400419,
+      "t_explain_ms": 44.11103704478592,
+      "t_total_ms": 415.40757508482784,
+      "meets_threshold": true,
+      "nodes": 215,
+      "edges": 737,
+      "node_kinds": {
+        "file": 45,
+        "registry": 163,
+        "thread": 6,
+        "process": 1
+      },
+      "shap": {
+        "t_explain_ms": 44.11103704478592,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "read read read read",
+            "shap_value": -0.9430326787381609,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "closekeys openkey queryvaluekey querykey",
+            "shap_value": -0.6400042445614871,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a registry key handle, then opened an existing registry key, then read a registry value, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "feature": "File",
+            "shap_value": 0.4442214104751647,
+            "orig_value": 45.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (45 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 4,
+            "feature": "openkey closekeys openkey querykey",
+            "shap_value": -0.37677973626144706,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "feature": "queryvaluekey closekeys openkey closekeys",
+            "shap_value": -0.2888967838141989,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read a registry value, then closed a registry key handle, then opened an existing registry key, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "openkey closekeys openkey openkey",
+            "shap_value": 0.2837348255218058,
+            "orig_value": 3.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then opened an existing registry key.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 7,
+            "feature": "openkey read read create",
+            "shap_value": 0.21240878668677088,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then read data from a file, then read data from a file, then created or opened a file/directory.",
+            "categories": [
+              "File System",
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 8,
+            "feature": "read read create create",
+            "shap_value": -0.1704576398438279,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then created or opened a file/directory, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 9,
+            "feature": "openkey querykey openkey closekeys",
+            "shap_value": -0.16024017722318973,
+            "orig_value": 11.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then queried registry key information, then opened an existing registry key, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "cleanup create queryinformation cleanup",
+            "shap_value": -0.13251434201778944,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread released a file handle, then created or opened a file/directory, then queried file metadata, then released a file handle.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": []
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          },
+          {
+            "id": "T1012",
+            "name": "Query Registry",
+            "tactic": "Discovery"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "4",
+      "image": "System",
+      "prediction": "BENIGN",
+      "confidence": 0.023056314173907196,
+      "t_detect_ms": 950.1477140001953,
+      "t_explain_ms": 49.27372594829649,
+      "t_total_ms": 999.4214399484918,
+      "meets_threshold": true,
+      "nodes": 206,
+      "edges": 334,
+      "node_kinds": {
+        "process": 1,
+        "thread": 115,
+        "registry": 73,
+        "file": 17
+      },
+      "shap": {
+        "t_explain_ms": 49.27372594829649,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "read read read read",
+            "shap_value": -0.6626127257733813,
+            "orig_value": 30.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "File",
+            "shap_value": 0.4966456203388752,
+            "orig_value": 17.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (17 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 3,
+            "feature": "Process",
+            "shap_value": -0.2577013342554242,
+            "orig_value": 115.0,
+            "direction": "BENIGN",
+            "narrative": "High interaction with Process entities (115 unique neighbours)",
+            "categories": [
+              "Process"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 4,
+            "feature": "start create create queryinformation",
+            "shap_value": 0.17378043723604078,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread thread started execution, then created or opened a file/directory, then created or opened a file/directory, then queried file metadata.",
+            "categories": [
+              "File System",
+              "Thread"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 5,
+            "feature": "Registry",
+            "shap_value": 0.1324441005372823,
+            "orig_value": 73.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with Registry entities (73 unique neighbours)",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 6,
+            "feature": "threadstart start create create",
+            "shap_value": 0.08816288453541088,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread spawned a new thread, then thread started execution, then created or opened a file/directory, then created or opened a file/directory.",
+            "categories": [
+              "File System",
+              "Thread"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 7,
+            "feature": "write write write write",
+            "shap_value": -0.02859105827881587,
+            "orig_value": 25.0,
+            "direction": "BENIGN",
+            "narrative": "The thread wrote data to a file, then wrote data to a file, then wrote data to a file, then wrote data to a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1074",
+                "name": "Data Staged",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 8,
+            "feature": "threadstart start read read",
+            "shap_value": -0.028512697387193472,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread spawned a new thread, then thread started execution, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System",
+              "Thread"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 9,
+            "feature": "start read read read",
+            "shap_value": -0.002165230829583105,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread thread started execution, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System",
+              "Thread"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "write read read read",
+            "shap_value": -0.0010986464951323854,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread wrote data to a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              },
+              {
+                "id": "T1074",
+                "name": "Data Staged",
+                "tactic": "Collection"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          },
+          {
+            "id": "T1074",
+            "name": "Data Staged",
+            "tactic": "Collection"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "6980",
+      "image": "WmiPrvSE",
+      "prediction": "BENIGN",
+      "confidence": 0.1558876756340367,
+      "t_detect_ms": 390.7514570164494,
+      "t_explain_ms": 61.740318953525275,
+      "t_total_ms": 452.4917759699747,
+      "meets_threshold": true,
+      "nodes": 431,
+      "edges": 1731,
+      "node_kinds": {
+        "file": 130,
+        "registry": 292,
+        "thread": 8,
+        "process": 1
+      },
+      "shap": {
+        "t_explain_ms": 61.740318953525275,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "openkey openkey closekeys querykey",
+            "shap_value": 0.9003106941238567,
+            "orig_value": 2.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then opened an existing registry key, then closed a registry key handle, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "openkey closekeys openkey closekeys",
+            "shap_value": 0.8683904758094122,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 3,
+            "feature": "closekeys openkey queryvaluekey querykey",
+            "shap_value": -0.8293055841301129,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a registry key handle, then opened an existing registry key, then read a registry value, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "feature": "read read read read",
+            "shap_value": -0.7938722505052741,
+            "orig_value": 10.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "feature": "openkey closekeys openkey querykey",
+            "shap_value": -0.38834970176976535,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "File",
+            "shap_value": 0.3663378424547037,
+            "orig_value": 130.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (130 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 7,
+            "feature": "openkey closekeys openkey openkey",
+            "shap_value": 0.2981680608836215,
+            "orig_value": 4.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then opened an existing registry key.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 8,
+            "feature": "queryinformation read read read",
+            "shap_value": -0.29673002331241605,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread queried file metadata, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 9,
+            "feature": "queryvaluekey closekeys openkey closekeys",
+            "shap_value": -0.2809481914238858,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read a registry value, then closed a registry key handle, then opened an existing registry key, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "read create create create",
+            "shap_value": 0.24515854068087573,
+            "orig_value": 4.0,
+            "direction": "MALWARE",
+            "narrative": "The thread read data from a file, then created or opened a file/directory, then created or opened a file/directory, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1012",
+            "name": "Query Registry",
+            "tactic": "Discovery"
+          },
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "7152",
+      "image": "svchost",
+      "prediction": "BENIGN",
+      "confidence": 0.001688552395645809,
+      "t_detect_ms": 347.9300470207818,
+      "t_explain_ms": 48.141693987417966,
+      "t_total_ms": 396.07174100819975,
+      "meets_threshold": true,
+      "nodes": 203,
+      "edges": 748,
+      "node_kinds": {
+        "file": 170,
+        "thread": 32,
+        "process": 1
+      },
+      "shap": {
+        "t_explain_ms": 48.141693987417966,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "read read read read",
+            "shap_value": -0.9211471828660576,
+            "orig_value": 7.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "close create direnum read",
+            "shap_value": -0.4930068178583932,
+            "orig_value": 3.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a file object, then created or opened a file/directory, then enumerated directory contents, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              },
+              {
+                "id": "T1083",
+                "name": "File and Directory Discovery",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "feature": "File",
+            "shap_value": 0.45667667416168256,
+            "orig_value": 176.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (176 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 4,
+            "feature": "Process",
+            "shap_value": -0.2755886960415828,
+            "orig_value": 31.0,
+            "direction": "BENIGN",
+            "narrative": "High interaction with Process entities (31 unique neighbours)",
+            "categories": [
+              "Process"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 5,
+            "feature": "close create direnum direnum",
+            "shap_value": 0.16137805989243142,
+            "orig_value": 4.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a file object, then created or opened a file/directory, then enumerated directory contents, then enumerated directory contents.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1083",
+                "name": "File and Directory Discovery",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "read read read create",
+            "shap_value": -0.148969581510436,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 7,
+            "feature": "cleanup close create queryinformation",
+            "shap_value": 0.1090409015588349,
+            "orig_value": 8.0,
+            "direction": "MALWARE",
+            "narrative": "The thread released a file handle, then closed a file object, then created or opened a file/directory, then queried file metadata.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 8,
+            "feature": "create direnum read direnum",
+            "shap_value": -0.08541131960109048,
+            "orig_value": 3.0,
+            "direction": "BENIGN",
+            "narrative": "The thread created or opened a file/directory, then enumerated directory contents, then read data from a file, then enumerated directory contents.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 9,
+            "feature": "cleanup cleanup close create",
+            "shap_value": -0.07320358742378606,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread released a file handle, then released a file handle, then closed a file object, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 10,
+            "feature": "read cleanup create cleanup",
+            "shap_value": 0.07041242103144146,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread read data from a file, then released a file handle, then created or opened a file/directory, then released a file handle.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          },
+          {
+            "id": "T1083",
+            "name": "File and Directory Discovery",
+            "tactic": "Discovery"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "7152",
+      "image": "svchost",
+      "prediction": "BENIGN",
+      "confidence": 0.003123191874532458,
+      "t_detect_ms": 313.10301402118057,
+      "t_explain_ms": 38.32496498944238,
+      "t_total_ms": 351.42797901062295,
+      "meets_threshold": true,
+      "nodes": 407,
+      "edges": 1689,
+      "node_kinds": {
+        "file": 374,
+        "thread": 32,
+        "process": 1
+      },
+      "shap": {
+        "t_explain_ms": 38.32496498944238,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "read read read read",
+            "shap_value": -0.9907711658712604,
+            "orig_value": 9.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "close create direnum read",
+            "shap_value": -0.37537696125426345,
+            "orig_value": 9.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a file object, then created or opened a file/directory, then enumerated directory contents, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              },
+              {
+                "id": "T1083",
+                "name": "File and Directory Discovery",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "feature": "create cleanup close direnum",
+            "shap_value": 0.3195338292875843,
+            "orig_value": 3.0,
+            "direction": "MALWARE",
+            "narrative": "The thread created or opened a file/directory, then released a file handle, then closed a file object, then enumerated directory contents.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1083",
+                "name": "File and Directory Discovery",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "feature": "Process",
+            "shap_value": -0.2527703249054663,
+            "orig_value": 31.0,
+            "direction": "BENIGN",
+            "narrative": "High interaction with Process entities (31 unique neighbours)",
+            "categories": [
+              "Process"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 5,
+            "feature": "close create direnum direnum",
+            "shap_value": 0.16336448198112566,
+            "orig_value": 8.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a file object, then created or opened a file/directory, then enumerated directory contents, then enumerated directory contents.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1083",
+                "name": "File and Directory Discovery",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "read read read create",
+            "shap_value": -0.12669297873185734,
+            "orig_value": 3.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 7,
+            "feature": "cleanup close create queryinformation",
+            "shap_value": 0.108976757593385,
+            "orig_value": 28.0,
+            "direction": "MALWARE",
+            "narrative": "The thread released a file handle, then closed a file object, then created or opened a file/directory, then queried file metadata.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 8,
+            "feature": "create direnum read direnum",
+            "shap_value": -0.09222868068668981,
+            "orig_value": 9.0,
+            "direction": "BENIGN",
+            "narrative": "The thread created or opened a file/directory, then enumerated directory contents, then read data from a file, then enumerated directory contents.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 9,
+            "feature": "read create direnum direnum",
+            "shap_value": 0.07791802546967942,
+            "orig_value": 2.0,
+            "direction": "MALWARE",
+            "narrative": "The thread read data from a file, then created or opened a file/directory, then enumerated directory contents, then enumerated directory contents.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "cleanup cleanup close create",
+            "shap_value": -0.07320358742378606,
+            "orig_value": 7.0,
+            "direction": "BENIGN",
+            "narrative": "The thread released a file handle, then released a file handle, then closed a file object, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": []
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          },
+          {
+            "id": "T1083",
+            "name": "File and Directory Discovery",
+            "tactic": "Discovery"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "7152",
+      "image": "svchost",
+      "prediction": "BENIGN",
+      "confidence": 0.011100853135301085,
+      "t_detect_ms": 23132.636941969395,
+      "t_explain_ms": 0.0,
+      "t_total_ms": 23132.636941969395,
+      "meets_threshold": false,
+      "nodes": 819,
+      "edges": 3678,
+      "node_kinds": {
+        "file": 786,
+        "thread": 32,
+        "process": 1
+      },
+      "shap": null
+    },
+    {
+      "root_pid": "1048",
+      "image": "SilkETW",
+      "prediction": "BENIGN",
+      "confidence": 0.2088573342157077,
+      "t_detect_ms": 444.70810698112473,
+      "t_explain_ms": 51.49087304016575,
+      "t_total_ms": 496.1989800212905,
+      "meets_threshold": true,
+      "nodes": 406,
+      "edges": 2473,
+      "node_kinds": {
+        "thread": 8,
+        "process": 1,
+        "file": 186,
+        "registry": 211
+      },
+      "shap": {
+        "t_explain_ms": 51.49087304016575,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "openkey openkey closekeys querykey",
+            "shap_value": 1.215910583166559,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then opened an existing registry key, then closed a registry key handle, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "create read read create",
+            "shap_value": -0.8263951019750985,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread created or opened a file/directory, then read data from a file, then read data from a file, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "feature": "read read read read",
+            "shap_value": 0.7908622647668682,
+            "orig_value": 821.0,
+            "direction": "MALWARE",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "feature": "queryinformation read read read",
+            "shap_value": -0.5611863135581832,
+            "orig_value": 11.0,
+            "direction": "BENIGN",
+            "narrative": "The thread queried file metadata, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "feature": "read read create create",
+            "shap_value": 0.444218414897385,
+            "orig_value": 3.0,
+            "direction": "MALWARE",
+            "narrative": "The thread read data from a file, then read data from a file, then created or opened a file/directory, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "close read read read",
+            "shap_value": 0.4019039824480165,
+            "orig_value": 2.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a file object, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 7,
+            "feature": "read read read create",
+            "shap_value": 0.3766442486297701,
+            "orig_value": 9.0,
+            "direction": "MALWARE",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 8,
+            "feature": "openkey setinformationkey closekeys closekeys",
+            "shap_value": 0.29152417593435676,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then modified registry key metadata, then closed a registry key handle, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 9,
+            "feature": "openkey closekeys openkey querykey",
+            "shap_value": -0.28755824652139395,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "cleanup create queryinformation cleanup",
+            "shap_value": -0.2674231730535592,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread released a file handle, then created or opened a file/directory, then queried file metadata, then released a file handle.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": []
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1012",
+            "name": "Query Registry",
+            "tactic": "Discovery"
+          },
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "7152",
+      "image": "svchost",
+      "prediction": "BENIGN",
+      "confidence": 0.1221467154617847,
+      "t_detect_ms": 585.9231810318306,
+      "t_explain_ms": 0.0,
+      "t_total_ms": 585.9231810318306,
+      "meets_threshold": true,
+      "nodes": 1643,
+      "edges": 7437,
+      "node_kinds": {
+        "thread": 32,
+        "file": 1610,
+        "process": 1
+      },
+      "shap": null
+    },
+    {
+      "root_pid": "4",
+      "image": "System",
+      "prediction": "BENIGN",
+      "confidence": 0.02545623200168624,
+      "t_detect_ms": 1219.7071179980412,
+      "t_explain_ms": 28.19741697749123,
+      "t_total_ms": 1247.9045349755324,
+      "meets_threshold": true,
+      "nodes": 413,
+      "edges": 693,
+      "node_kinds": {
+        "process": 1,
+        "thread": 115,
+        "registry": 144,
+        "file": 153
+      },
+      "shap": {
+        "t_explain_ms": 28.19741697749123,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "read read read read",
+            "shap_value": -0.6782013288746803,
+            "orig_value": 30.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "File",
+            "shap_value": 0.4966456203388752,
+            "orig_value": 153.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (153 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 3,
+            "feature": "Process",
+            "shap_value": -0.24669818289556314,
+            "orig_value": 115.0,
+            "direction": "BENIGN",
+            "narrative": "High interaction with Process entities (115 unique neighbours)",
+            "categories": [
+              "Process"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 4,
+            "feature": "start create create queryinformation",
+            "shap_value": 0.16342345555350749,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread thread started execution, then created or opened a file/directory, then created or opened a file/directory, then queried file metadata.",
+            "categories": [
+              "File System",
+              "Thread"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 5,
+            "feature": "Registry",
+            "shap_value": 0.1325805260005928,
+            "orig_value": 144.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with Registry entities (144 unique neighbours)",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 6,
+            "feature": "write write write write",
+            "shap_value": 0.0881789929579465,
+            "orig_value": 163.0,
+            "direction": "MALWARE",
+            "narrative": "The thread wrote data to a file, then wrote data to a file, then wrote data to a file, then wrote data to a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1074",
+                "name": "Data Staged",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 7,
+            "feature": "threadstart start create create",
+            "shap_value": 0.08816288453541088,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread spawned a new thread, then thread started execution, then created or opened a file/directory, then created or opened a file/directory.",
+            "categories": [
+              "File System",
+              "Thread"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 8,
+            "feature": "threadstart start read read",
+            "shap_value": -0.028512697387193472,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread spawned a new thread, then thread started execution, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System",
+              "Thread"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 9,
+            "feature": "start read read read",
+            "shap_value": -0.002165230829583105,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread thread started execution, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System",
+              "Thread"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "write read read read",
+            "shap_value": -0.0010986464951323854,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread wrote data to a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              },
+              {
+                "id": "T1074",
+                "name": "Data Staged",
+                "tactic": "Collection"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          },
+          {
+            "id": "T1074",
+            "name": "Data Staged",
+            "tactic": "Collection"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "3820",
+      "image": "SDXHelper",
+      "prediction": "BENIGN",
+      "confidence": 0.006038921231568737,
+      "t_detect_ms": 659.2716550221667,
+      "t_explain_ms": 38.41241804184392,
+      "t_total_ms": 697.6840730640106,
+      "meets_threshold": true,
+      "nodes": 203,
+      "edges": 10196,
+      "node_kinds": {
+        "file": 178,
+        "thread": 24,
+        "process": 1
+      },
+      "shap": {
+        "t_explain_ms": 38.41241804184392,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "queryinformation queryinformation read read",
+            "shap_value": -1.3774521459655011,
+            "orig_value": 32.0,
+            "direction": "BENIGN",
+            "narrative": "The thread queried file metadata, then queried file metadata, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "queryinformation read read read",
+            "shap_value": -0.45046464947291165,
+            "orig_value": 31.0,
+            "direction": "BENIGN",
+            "narrative": "The thread queried file metadata, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "feature": "write write write read",
+            "shap_value": -0.4247309574071273,
+            "orig_value": 7.0,
+            "direction": "BENIGN",
+            "narrative": "The thread wrote data to a file, then wrote data to a file, then wrote data to a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              },
+              {
+                "id": "T1074",
+                "name": "Data Staged",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "feature": "create queryinformation queryinformation cleanup",
+            "shap_value": -0.36756466336951327,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread created or opened a file/directory, then queried file metadata, then queried file metadata, then released a file handle.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 5,
+            "feature": "cleanup close read read",
+            "shap_value": 0.3583552934773749,
+            "orig_value": 5.0,
+            "direction": "MALWARE",
+            "narrative": "The thread released a file handle, then closed a file object, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "read read read queryinformation",
+            "shap_value": -0.34547212838267327,
+            "orig_value": 37.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then queried file metadata.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 7,
+            "feature": "write write write queryinformation",
+            "shap_value": 0.24681345683528563,
+            "orig_value": 364.0,
+            "direction": "MALWARE",
+            "narrative": "The thread wrote data to a file, then wrote data to a file, then wrote data to a file, then queried file metadata.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1074",
+                "name": "Data Staged",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 8,
+            "feature": "File",
+            "shap_value": 0.23653918851018094,
+            "orig_value": 182.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (182 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 9,
+            "feature": "read read read create",
+            "shap_value": 0.23324279901156197,
+            "orig_value": 8.0,
+            "direction": "MALWARE",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "close read read read",
+            "shap_value": 0.22826146113095702,
+            "orig_value": 6.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a file object, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          },
+          {
+            "id": "T1074",
+            "name": "Data Staged",
+            "tactic": "Collection"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "7152",
+      "image": "svchost",
+      "prediction": "BENIGN",
+      "confidence": 0.2561007234424358,
+      "t_detect_ms": 808.6286379839294,
+      "t_explain_ms": 0.0,
+      "t_total_ms": 808.6286379839294,
+      "meets_threshold": true,
+      "nodes": 3290,
+      "edges": 14783,
+      "node_kinds": {
+        "thread": 32,
+        "file": 3257,
+        "process": 1
+      },
+      "shap": null
+    },
+    {
+      "root_pid": "828",
+      "image": "svchost",
+      "prediction": "BENIGN",
+      "confidence": 0.0028763169870178813,
+      "t_detect_ms": 23406.47212800104,
+      "t_explain_ms": 33.21516403229907,
+      "t_total_ms": 23439.68729203334,
+      "meets_threshold": false,
+      "nodes": 202,
+      "edges": 1587,
+      "node_kinds": {
+        "registry": 155,
+        "file": 27,
+        "process": 1,
+        "thread": 19
+      },
+      "shap": {
+        "t_explain_ms": 33.21516403229907,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "closekeys queryvaluekey closekeys queryinformation",
+            "shap_value": -0.931346250147634,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a registry key handle, then read a registry value, then closed a registry key handle, then queried file metadata.",
+            "categories": [
+              "File System",
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 2,
+            "feature": "openkey closekeys openkey querykey",
+            "shap_value": 0.657605791353485,
+            "orig_value": 30.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "feature": "File",
+            "shap_value": 0.4253459524413756,
+            "orig_value": 28.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (28 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 4,
+            "feature": "closekeys queryvaluekey queryvaluekey closekeys",
+            "shap_value": -0.28578296069817316,
+            "orig_value": 16.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a registry key handle, then read a registry value, then read a registry value, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 5,
+            "feature": "openkey enumeratekey closekeys querykey",
+            "shap_value": -0.23954281435212396,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then enumerated sub-keys of a registry key, then closed a registry key handle, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "openkey closekeys openkey openkey",
+            "shap_value": 0.2084081223064434,
+            "orig_value": 3.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then opened an existing registry key.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 7,
+            "feature": "closekeys openkey openkey closekeys",
+            "shap_value": 0.1924733584140266,
+            "orig_value": 2.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a registry key handle, then opened an existing registry key, then opened an existing registry key, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 8,
+            "feature": "close enumeratevaluekey enumeratevaluekey enumeratevaluekey",
+            "shap_value": -0.16232122932405543,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a file object, then enumerated values under a registry key, then enumerated values under a registry key, then enumerated values under a registry key.",
+            "categories": [
+              "File System",
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 9,
+            "feature": "openkey closekeys closekeys queryvaluekey",
+            "shap_value": -0.128323395131047,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then closed a registry key handle, then read a registry value.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "closekeys openkey querykey closekeys",
+            "shap_value": 0.12550273912608295,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a registry key handle, then opened an existing registry key, then queried registry key information, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1012",
+            "name": "Query Registry",
+            "tactic": "Discovery"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "1892",
+      "image": "backgroundTaskHost",
+      "prediction": "BENIGN",
+      "confidence": 0.009258182876186733,
+      "t_detect_ms": 234.17963902466,
+      "t_explain_ms": 42.508492013439536,
+      "t_total_ms": 276.6881310380995,
+      "meets_threshold": true,
+      "nodes": 201,
+      "edges": 708,
+      "node_kinds": {
+        "registry": 162,
+        "file": 31,
+        "thread": 7,
+        "process": 1
+      },
+      "shap": {
+        "t_explain_ms": 42.508492013439536,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "read read read read",
+            "shap_value": -0.9050020076754741,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "File",
+            "shap_value": 0.42943106073934184,
+            "orig_value": 31.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (31 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 3,
+            "feature": "close read read read",
+            "shap_value": 0.3591639564481475,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a file object, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "feature": "openkey closekeys openkey openkey",
+            "shap_value": 0.2469314068351727,
+            "orig_value": 2.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then opened an existing registry key.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 5,
+            "feature": "openkey querykey openkey closekeys",
+            "shap_value": -0.15659210882659869,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then queried registry key information, then opened an existing registry key, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "imageload imageload cleanup close",
+            "shap_value": -0.1242279247632027,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread loaded a dll/executable image into memory, then loaded a dll/executable image into memory, then released a file handle, then closed a file object.",
+            "categories": [
+              "File System",
+              "Process"
+            ],
+            "mitre": [
+              {
+                "id": "T1129",
+                "name": "Shared Modules",
+                "tactic": "Execution"
+              }
+            ]
+          },
+          {
+            "rank": 7,
+            "feature": "close create imageload cleanup",
+            "shap_value": -0.10614342662102842,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a file object, then created or opened a file/directory, then loaded a dll/executable image into memory, then released a file handle.",
+            "categories": [
+              "File System",
+              "Process"
+            ],
+            "mitre": [
+              {
+                "id": "T1055",
+                "name": "Process Injection",
+                "tactic": "Defense Evasion"
+              },
+              {
+                "id": "T1129",
+                "name": "Shared Modules",
+                "tactic": "Execution"
+              }
+            ]
+          },
+          {
+            "rank": 8,
+            "feature": "querykey querykey openkey querykey",
+            "shap_value": 0.08925509031512102,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread queried registry key information, then queried registry key information, then opened an existing registry key, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 9,
+            "feature": "Registry",
+            "shap_value": 0.08520002516506503,
+            "orig_value": 170.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with Registry entities (170 unique neighbours)",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 10,
+            "feature": "imageload create queryinformation cleanup",
+            "shap_value": -0.08425120774570462,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread loaded a dll/executable image into memory, then created or opened a file/directory, then queried file metadata, then released a file handle.",
+            "categories": [
+              "File System",
+              "Process"
+            ],
+            "mitre": [
+              {
+                "id": "T1055.001",
+                "name": "Dynamic-link Library Injection",
+                "tactic": "Defense Evasion"
+              },
+              {
+                "id": "T1055",
+                "name": "Process Injection",
+                "tactic": "Defense Evasion"
+              },
+              {
+                "id": "T1129",
+                "name": "Shared Modules",
+                "tactic": "Execution"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          },
+          {
+            "id": "T1012",
+            "name": "Query Registry",
+            "tactic": "Discovery"
+          },
+          {
+            "id": "T1129",
+            "name": "Shared Modules",
+            "tactic": "Execution"
+          },
+          {
+            "id": "T1055",
+            "name": "Process Injection",
+            "tactic": "Defense Evasion"
+          },
+          {
+            "id": "T1055.001",
+            "name": "Dynamic-link Library Injection",
+            "tactic": "Defense Evasion"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "1892",
+      "image": "backgroundTaskHost",
+      "prediction": "BENIGN",
+      "confidence": 0.0066250335966493695,
+      "t_detect_ms": 389.21692699659616,
+      "t_explain_ms": 36.31674696225673,
+      "t_total_ms": 425.5336739588529,
+      "meets_threshold": true,
+      "nodes": 429,
+      "edges": 2094,
+      "node_kinds": {
+        "registry": 325,
+        "file": 92,
+        "thread": 11,
+        "process": 1
+      },
+      "shap": {
+        "t_explain_ms": 36.31674696225673,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "openkey openkey closekeys querykey",
+            "shap_value": 1.1197492553580868,
+            "orig_value": 5.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then opened an existing registry key, then closed a registry key handle, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "read read read read",
+            "shap_value": -0.8988420061508021,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "feature": "create queryinformation queryinformation cleanup",
+            "shap_value": -0.3778064000187556,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread created or opened a file/directory, then queried file metadata, then queried file metadata, then released a file handle.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 4,
+            "feature": "File",
+            "shap_value": 0.3736469949092452,
+            "orig_value": 93.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (93 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 5,
+            "feature": "openkey closekeys openkey querykey",
+            "shap_value": -0.33097794432425043,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "openkey closekeys openkey openkey",
+            "shap_value": 0.24786906258323174,
+            "orig_value": 3.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then opened an existing registry key.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 7,
+            "feature": "close read read read",
+            "shap_value": 0.24786256094045062,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a file object, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 8,
+            "feature": "openkey enumeratekey closekeys querykey",
+            "shap_value": -0.23635016672600365,
+            "orig_value": 58.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then enumerated sub-keys of a registry key, then closed a registry key handle, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 9,
+            "feature": "closekeys queryvaluekey queryvaluekey closekeys",
+            "shap_value": -0.21732573256984694,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a registry key handle, then read a registry value, then read a registry value, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 10,
+            "feature": "read read create create",
+            "shap_value": -0.1597543632323399,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then created or opened a file/directory, then created or opened a file/directory.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1012",
+            "name": "Query Registry",
+            "tactic": "Discovery"
+          },
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "3820",
+      "image": "SDXHelper",
+      "prediction": "BENIGN",
+      "confidence": 0.008338486552289751,
+      "t_detect_ms": 736.2059750012122,
+      "t_explain_ms": 46.78657598560676,
+      "t_total_ms": 782.992550986819,
+      "meets_threshold": true,
+      "nodes": 408,
+      "edges": 25155,
+      "node_kinds": {
+        "file": 383,
+        "thread": 24,
+        "process": 1
+      },
+      "shap": {
+        "t_explain_ms": 46.78657598560676,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "queryinformation queryinformation read read",
+            "shap_value": -1.3916328212592368,
+            "orig_value": 79.0,
+            "direction": "BENIGN",
+            "narrative": "The thread queried file metadata, then queried file metadata, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "create queryinformation queryinformation read",
+            "shap_value": -1.3789568078804633,
+            "orig_value": 11.0,
+            "direction": "BENIGN",
+            "narrative": "The thread created or opened a file/directory, then queried file metadata, then queried file metadata, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "feature": "read read read read",
+            "shap_value": 0.820483649823537,
+            "orig_value": 389.0,
+            "direction": "MALWARE",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "feature": "queryinformation read read read",
+            "shap_value": -0.458875056998516,
+            "orig_value": 80.0,
+            "direction": "BENIGN",
+            "narrative": "The thread queried file metadata, then read data from a file, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "feature": "read read read queryinformation",
+            "shap_value": -0.3915076542879513,
+            "orig_value": 89.0,
+            "direction": "BENIGN",
+            "narrative": "The thread read data from a file, then read data from a file, then read data from a file, then queried file metadata.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 6,
+            "feature": "create queryinformation queryinformation cleanup",
+            "shap_value": -0.3131445302363937,
+            "orig_value": 2.0,
+            "direction": "BENIGN",
+            "narrative": "The thread created or opened a file/directory, then queried file metadata, then queried file metadata, then released a file handle.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 7,
+            "feature": "close create create read",
+            "shap_value": 0.30708535226082023,
+            "orig_value": 2.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a file object, then created or opened a file/directory, then created or opened a file/directory, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 8,
+            "feature": "cleanup close read read",
+            "shap_value": 0.30421016686221974,
+            "orig_value": 19.0,
+            "direction": "MALWARE",
+            "narrative": "The thread released a file handle, then closed a file object, then read data from a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 9,
+            "feature": "write write write queryinformation",
+            "shap_value": 0.26112860071533894,
+            "orig_value": 848.0,
+            "direction": "MALWARE",
+            "narrative": "The thread wrote data to a file, then wrote data to a file, then wrote data to a file, then queried file metadata.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1074",
+                "name": "Data Staged",
+                "tactic": "Collection"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "write write write read",
+            "shap_value": -0.24638298111439452,
+            "orig_value": 11.0,
+            "direction": "BENIGN",
+            "narrative": "The thread wrote data to a file, then wrote data to a file, then wrote data to a file, then read data from a file.",
+            "categories": [
+              "File System"
+            ],
+            "mitre": [
+              {
+                "id": "T1005",
+                "name": "Data from Local System",
+                "tactic": "Collection"
+              },
+              {
+                "id": "T1074",
+                "name": "Data Staged",
+                "tactic": "Collection"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1005",
+            "name": "Data from Local System",
+            "tactic": "Collection"
+          },
+          {
+            "id": "T1074",
+            "name": "Data Staged",
+            "tactic": "Collection"
+          }
+        ]
+      }
+    },
+    {
+      "root_pid": "948",
+      "image": "svchost",
+      "prediction": "BENIGN",
+      "confidence": 0.008088620780669293,
+      "t_detect_ms": 306.475549004972,
+      "t_explain_ms": 39.08792301081121,
+      "t_total_ms": 345.5634720157832,
+      "meets_threshold": true,
+      "nodes": 214,
+      "edges": 1194,
+      "node_kinds": {
+        "registry": 180,
+        "file": 21,
+        "process": 1,
+        "thread": 12
+      },
+      "shap": {
+        "t_explain_ms": 39.08792301081121,
+        "base_value": -0.7817361596414247,
+        "attributions": [
+          {
+            "rank": 1,
+            "feature": "openkey openkey closekeys querykey",
+            "shap_value": 0.9904172014063872,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then opened an existing registry key, then closed a registry key handle, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "feature": "closekeys openkey queryvaluekey querykey",
+            "shap_value": -0.5709604774321004,
+            "orig_value": 1.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a registry key handle, then opened an existing registry key, then read a registry value, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "feature": "File",
+            "shap_value": 0.4420940383841091,
+            "orig_value": 21.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with File entities (21 unique neighbours)",
+            "categories": [
+              "File"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 4,
+            "feature": "openkey closekeys openkey querykey",
+            "shap_value": -0.309761562143145,
+            "orig_value": 4.0,
+            "direction": "BENIGN",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "feature": "openkey closekeys openkey openkey",
+            "shap_value": 0.2860332020418266,
+            "orig_value": 3.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then opened an existing registry key, then opened an existing registry key.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 6,
+            "feature": "closekeys openkey openkey closekeys",
+            "shap_value": 0.216370714113727,
+            "orig_value": 4.0,
+            "direction": "MALWARE",
+            "narrative": "The thread closed a registry key handle, then opened an existing registry key, then opened an existing registry key, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 7,
+            "feature": "closekeys queryvaluekey queryvaluekey closekeys",
+            "shap_value": -0.1783401822992935,
+            "orig_value": 13.0,
+            "direction": "BENIGN",
+            "narrative": "The thread closed a registry key handle, then read a registry value, then read a registry value, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 8,
+            "feature": "Registry",
+            "shap_value": 0.11283845685858772,
+            "orig_value": 180.0,
+            "direction": "MALWARE",
+            "narrative": "High interaction with Registry entities (180 unique neighbours)",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": []
+          },
+          {
+            "rank": 9,
+            "feature": "querykey openkey queryvaluekey querykey",
+            "shap_value": -0.10241510136019034,
+            "orig_value": 28.0,
+            "direction": "BENIGN",
+            "narrative": "The thread queried registry key information, then opened an existing registry key, then read a registry value, then queried registry key information.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          },
+          {
+            "rank": 10,
+            "feature": "openkey closekeys queryvaluekey closekeys",
+            "shap_value": 0.09822999255240114,
+            "orig_value": 1.0,
+            "direction": "MALWARE",
+            "narrative": "The thread opened an existing registry key, then closed a registry key handle, then read a registry value, then closed a registry key handle.",
+            "categories": [
+              "Registry"
+            ],
+            "mitre": [
+              {
+                "id": "T1012",
+                "name": "Query Registry",
+                "tactic": "Discovery"
+              }
+            ]
+          }
+        ],
+        "mitre_summary": [
+          {
+            "id": "T1012",
+            "name": "Query Registry",
+            "tactic": "Discovery"
+          }
+        ]
+      }
+    }
+  ]
+}

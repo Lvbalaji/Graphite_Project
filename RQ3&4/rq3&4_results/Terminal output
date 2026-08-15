@@ -1,0 +1,830 @@
+                                                                                                                                                                                             
+┌──(python_env)─(kali㉿LoganathaVB2)-[~/Desktop/Graphite/src]
+└─$ python live_soc_simulation.py --trigger-nodes 100 --watch-pid 8520
+16:50:45 [INFO] Loaded saved model: features=20213  trained_on=1167  test_f1=0.9130434782608695  test_auc=0.9672054564140895
+16:50:46 [INFO] Connected to Elasticsearch at http://localhost:9200
+
+====================================================================================================
+  RQ3: REAL-TIME SOC SIMULATION  (live mode)                                                        
+  Elasticsearch: http://localhost:9200/etw-live-logs                                                
+  Trigger      : graphlet >= 100 nodes per PROCESSSTART root                                        
+  Threshold    : T_detect + T_explain <= 5000 ms                                                    
+  Show benign  : False                                                                              
+====================================================================================================
+
+16:50:48 [INFO] [burst] Ingested 6402 events (0 new PIDs)
+16:51:20 [INFO] [status] 1874 nodes, 3194 edges, 141 roots, 4 classified
+16:51:20 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE)
+16:51:20 [INFO] [growing] PID 2540(explorer)=50, PID 2780(svchost)=49, PID 8884(msedgewebview2)=45, PID 7480(SearchApp)=28, PID 816(svchost)=23
+16:51:20 [INFO] [watch PID 8520] NOT YET SEEN in events
+16:51:52 [INFO] [status] 2215 nodes, 5851 edges, 141 roots, 4 classified
+16:51:52 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE)
+16:51:52 [INFO] [growing] PID 7904(powershell)=79, PID 2780(svchost)=64, PID 2540(explorer)=51, PID 8884(msedgewebview2)=45, PID 7480(SearchApp)=28
+16:51:52 [INFO] [watch PID 8520] NOT YET SEEN in events
+16:52:25 [INFO] [status] 2372 nodes, 9653 edges, 141 roots, 4 classified
+16:52:25 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE)
+16:52:25 [INFO] [growing] PID 7904(powershell)=79, PID 2780(svchost)=64, PID 2540(explorer)=51, PID 8884(msedgewebview2)=45, PID 7480(SearchApp)=28
+16:52:25 [INFO] [watch PID 8520] NOT YET SEEN in events
+16:52:57 [INFO] [status] 2500 nodes, 13433 edges, 141 roots, 4 classified
+16:52:57 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE)
+16:52:57 [INFO] [growing] PID 7904(powershell)=79, PID 2780(svchost)=64, PID 2540(explorer)=51, PID 8884(msedgewebview2)=45, PID 7480(SearchApp)=28
+16:52:57 [INFO] [watch PID 8520] NOT YET SEEN in events
+16:53:29 [INFO] [status] 2540 nodes, 17021 edges, 141 roots, 4 classified
+16:53:29 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE)
+16:53:29 [INFO] [growing] PID 7904(powershell)=79, PID 2780(svchost)=64, PID 2540(explorer)=51, PID 8884(msedgewebview2)=45, PID 7480(SearchApp)=28
+16:53:29 [INFO] [watch PID 8520] NOT YET SEEN in events
+16:54:01 [INFO] [status] 2549 nodes, 20151 edges, 141 roots, 4 classified
+16:54:01 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE)
+16:54:01 [INFO] [growing] PID 7904(powershell)=79, PID 2780(svchost)=64, PID 2540(explorer)=51, PID 8884(msedgewebview2)=45, PID 7480(SearchApp)=28
+16:54:01 [INFO] [watch PID 8520] NOT YET SEEN in events
+16:54:34 [INFO] [status] 2616 nodes, 22860 edges, 141 roots, 4 classified
+16:54:34 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE)
+16:54:34 [INFO] [growing] PID 7904(powershell)=79, PID 2780(svchost)=64, PID 3164(vmtoolsd)=51, PID 2540(explorer)=51, PID 8884(msedgewebview2)=45
+16:54:34 [INFO] [watch PID 8520] NOT YET SEEN in events
+16:55:06 [INFO] [status] 2617 nodes, 25821 edges, 141 roots, 4 classified
+16:55:06 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE)
+16:55:06 [INFO] [growing] PID 7904(powershell)=79, PID 2780(svchost)=64, PID 3164(vmtoolsd)=51, PID 2540(explorer)=51, PID 8884(msedgewebview2)=45
+16:55:06 [INFO] [watch PID 8520] NOT YET SEEN in events
+16:55:38 [INFO] [status] 2824 nodes, 27505 edges, 141 roots, 4 classified
+16:55:38 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE)
+16:55:38 [INFO] [growing] PID 7904(powershell)=79, PID 2540(explorer)=73, PID 2780(svchost)=70, PID 4084(WmiPrvSE)=59, PID 3164(vmtoolsd)=56
+16:55:38 [INFO] [watch PID 8520] NOT YET SEEN in events
+16:55:59 [INFO] [graphlet root=8520 image=powershell] 112 nodes / 350 edges, kinds={'registry': 60, 'thread': 7, 'file': 44, 'process': 1}
+16:56:04 [INFO] [graphlet root=8520 image=powershell] 247 nodes / 705 edges, kinds={'registry': 133, 'thread': 13, 'file': 100, 'process': 1}
+16:56:10 [INFO] [status] 3491 nodes, 30364 edges, 143 roots, 7 classified
+16:56:10 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+16:56:10 [INFO] [growing] PID 2540(explorer)=94, PID 7904(powershell)=79, PID 2780(svchost)=70, PID 6104(ctfmon)=63, PID 4084(WmiPrvSE)=59
+16:56:10 [INFO] [watch PID 8520] 338 nodes, 1071 edges, image=powershell, kinds={'thread': 13, 'process': 1, 'registry': 192, 'file': 132}
+16:56:15 [INFO] [graphlet root=8520 image=powershell] 510 nodes / 1714 edges, kinds={'thread': 14, 'process': 1, 'registry': 348, 'file': 147}
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │                             SOC ALERT — MALWARE DETECTION EXPLANATION                              │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  Sample  : PID 8520 (powershell)                                                                    │
+  │  Process : powershell                                                                               │
+  │  Model   : LightGBM (RQ1 winner: 91.81% acc, 0.9672 AUC)                                            │
+  │  Verdict : ██ MALWARE — confidence = 0.5824 (58.2%)                                                 │
+  │  Graph   : 510 nodes, 1714 edges  (348 registry, 147 file, 14 thread, 1 process)                    │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  T_detect    :     227.05 ms                                                                        │
+  │  T_explain   :      28.65 ms                                                                        │
+  │  T_total     :     255.70 ms                                                                        │
+  │  RQ3 (≤5000ms): [PASS ✓]                                                                            │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                      WHY IS THIS MALWARE? — Top behavioural indicators (SHAP)                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                                                                                     │
+  │  #1  Pattern : querykey enumeratekey enumeratekey closekeys                                         │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +1.9453  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread queried registry key information, then enumerated sub-keys of a registr │
+  │                  y key, then enumerated sub-keys of a registry key, then closed a registry key hand │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #2  Pattern : read read read read                                                                  │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.9057  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread read data from a file, then read data from a file, then read data from  │
+  │                  a file, then read data from a file.                                                │
+  │       MITRE   : T1005  (Data from Local System) [Collection]                                        │
+  │                                                                                                     │
+  │  #3  Pattern : closekeys openkey queryvaluekey querykey                                             │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 4 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.8027  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n read a registry value, then queried registry key information.                    │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #4  Pattern : openkey closekeys openkey closekeys                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.6187  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then closed a registry key handle.              │
+  │                                                                                                     │
+  │  #5  Pattern : File                                                                                 │
+  │       Category: [File]                                                                              │
+  │       Occurred : 154 time(s) in this graphlet                                                       │
+  │       Impact   : SHAP = +0.3492  (→ MALWARE) influences classification                              │
+  │       Meaning  : High interaction with File entities (154 unique neighbours)                        │
+  │                                                                                                     │
+  │  #6  Pattern : openkey closekeys openkey querykey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.3254  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then queried registry key information.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #7  Pattern : openkey closekeys openkey openkey                                                    │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 3 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.2917  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then opened an existing registry key.           │
+  │                                                                                                     │
+  │  #8  Pattern : closekeys openkey closekeys openkey                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.2411  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n closed a registry key handle, then opened an existing registry key.              │
+  │                                                                                                     │
+  │  #9  Pattern : querykey openkey enumeratekey openkey                                                │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.2117  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread queried registry key information, then opened an existing registry key, │
+  │                   then enumerated sub-keys of a registry key, then opened an existing registry key. │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #10  Pattern : cleanup close cleanup create                                                        │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.1782  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread released a file handle, then closed a file object, then released a file │
+  │                   handle, then created or opened a file/directory.                                  │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                         MITRE ATT&CK SUMMARY — unique techniques observed                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    T1012        Query Registry                           [Discovery]                                │
+  │    T1005        Data from Local System                   [Collection]                               │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                     BEHAVIOURAL ATTACK PROFILE                                     │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    RECONNAISSANCE → DATA HARVESTING: Process enumerated system resources (registry keys, files)     │
+  │    and systematically read data — consistent with information-stealing malware collecting           │
+  │    credentials or configuration data.                                                               │
+  │                                                                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────────┘
+16:56:32 [INFO] [graphlet root=8520 image=powershell] 1036 nodes / 3910 edges, kinds={'registry': 803, 'file': 218, 'thread': 14, 'process': 1}
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │                             SOC ALERT — MALWARE DETECTION EXPLANATION                              │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  Sample  : PID 8520 (powershell)                                                                    │
+  │  Process : powershell                                                                               │
+  │  Model   : LightGBM (RQ1 winner: 91.81% acc, 0.9672 AUC)                                            │
+  │  Verdict : ██ MALWARE — confidence = 0.7319 (73.2%)                                                 │
+  │  Graph   : 1036 nodes, 3910 edges  (803 registry, 218 file, 14 thread, 1 process)                   │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  T_detect    :     568.01 ms                                                                        │
+  │  T_explain   :      26.04 ms                                                                        │
+  │  T_total     :     594.05 ms                                                                        │
+  │  RQ3 (≤5000ms): [PASS ✓]                                                                            │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                      WHY IS THIS MALWARE? — Top behavioural indicators (SHAP)                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                                                                                     │
+  │  #1  Pattern : querykey enumeratekey enumeratekey closekeys                                         │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +1.3883  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread queried registry key information, then enumerated sub-keys of a registr │
+  │                  y key, then enumerated sub-keys of a registry key, then closed a registry key hand │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #2  Pattern : openkey openkey closekeys querykey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +1.3456  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then opened an existing registry key,  │
+  │                  then closed a registry key handle, then queried registry key information.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #3  Pattern : closekeys openkey queryvaluekey querykey                                             │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 4 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.7938  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n read a registry value, then queried registry key information.                    │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #4  Pattern : read read read read                                                                  │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.7090  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread read data from a file, then read data from a file, then read data from  │
+  │                  a file, then read data from a file.                                                │
+  │       MITRE   : T1005  (Data from Local System) [Collection]                                        │
+  │                                                                                                     │
+  │  #5  Pattern : openkey closekeys openkey create                                                     │
+  │       Category: [File System+Registry]                                                              │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.6994  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then created or opened a file/directory.        │
+  │                                                                                                     │
+  │  #6  Pattern : openkey closekeys openkey closekeys                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 5 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.5710  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then closed a registry key handle.              │
+  │                                                                                                     │
+  │  #7  Pattern : queryvaluekey closekeys openkey closekeys                                            │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 3 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.5659  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread read a registry value, then closed a registry key handle, then opened a │
+  │                  n existing registry key, then closed a registry key handle.                        │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #8  Pattern : openkey createkey closekeys closekeys                                                │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.4348  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread opened an existing registry key, then created a new registry key, then  │
+  │                  closed a registry key handle, then closed a registry key handle.                   │
+  │       MITRE   : T1112  (Modify Registry) [Defense Evasion]                                          │
+  │                                                                                                     │
+  │  #9  Pattern : openkey closekeys openkey querykey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.3165  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then queried registry key information.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #10  Pattern : openkey closekeys openkey openkey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 5 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.2840  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then opened an existing registry key.           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                         MITRE ATT&CK SUMMARY — unique techniques observed                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    T1012        Query Registry                           [Discovery]                                │
+  │    T1005        Data from Local System                   [Collection]                               │
+  │    T1112        Modify Registry                          [Defense Evasion]                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                     BEHAVIOURAL ATTACK PROFILE                                     │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    RECONNAISSANCE → EVASION: Process scanned registry and file system for information then          │
+  │    modified system configuration to evade detection — consistent with environment-aware malware     │
+  │    that adapts its behaviour based on installed defences.                                           │
+  │                                                                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────────┘
+16:56:43 [INFO] [status] 4607 nodes, 34531 edges, 143 roots, 7 classified
+16:56:43 [INFO] [MALWARE detected] PID 8520(powershell)
+16:56:43 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+16:56:43 [INFO] [growing] PID 2540(explorer)=94, PID 7904(powershell)=79, PID 2780(svchost)=70, PID 6104(ctfmon)=63, PID 4084(WmiPrvSE)=59
+16:56:43 [INFO] [watch PID 8520] 1278 nodes, 5054 edges, image=powershell, kinds={'thread': 14, 'process': 1, 'registry': 1017, 'file': 246}
+16:57:15 [INFO] [status] 5067 nodes, 36946 edges, 143 roots, 7 classified
+16:57:15 [INFO] [MALWARE detected] PID 8520(powershell)
+16:57:15 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+16:57:15 [INFO] [growing] PID 2540(explorer)=96, PID 7904(powershell)=79, PID 2780(svchost)=70, PID 6104(ctfmon)=63, PID 4084(WmiPrvSE)=59
+16:57:15 [INFO] [watch PID 8520] 1638 nodes, 7206 edges, image=powershell, kinds={'thread': 20, 'process': 1, 'registry': 1263, 'file': 354}
+16:57:47 [INFO] [status] 5463 nodes, 39756 edges, 143 roots, 7 classified
+16:57:47 [INFO] [MALWARE detected] PID 8520(powershell)
+16:57:47 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+16:57:47 [INFO] [growing] PID 2540(explorer)=96, PID 7904(powershell)=79, PID 2780(svchost)=70, PID 6104(ctfmon)=63, PID 4084(WmiPrvSE)=59
+16:57:47 [INFO] [watch PID 8520] 2023 nodes, 9989 edges, image=powershell, kinds={'thread': 20, 'process': 1, 'registry': 1393, 'file': 609}
+16:57:57 [INFO] [graphlet root=8520 image=powershell] 2078 nodes / 11194 edges, kinds={'thread': 21, 'process': 1, 'registry': 1425, 'file': 631}
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │                             SOC ALERT — MALWARE DETECTION EXPLANATION                              │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  Sample  : PID 8520 (powershell)                                                                    │
+  │  Process : powershell                                                                               │
+  │  Model   : LightGBM (RQ1 winner: 91.81% acc, 0.9672 AUC)                                            │
+  │  Verdict : ██ MALWARE — confidence = 0.9994 (99.9%)                                                 │
+  │  Graph   : 2078 nodes, 11194 edges  (1425 registry, 631 file, 21 thread, 1 process)                 │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  T_detect    :     290.69 ms                                                                        │
+  │  T_explain   :      25.04 ms                                                                        │
+  │  T_total     :     315.73 ms                                                                        │
+  │  RQ3 (≤5000ms): [PASS ✓]                                                                            │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                      WHY IS THIS MALWARE? — Top behavioural indicators (SHAP)                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                                                                                     │
+  │  #1  Pattern : openkey closekeys openkey create                                                     │
+  │       Category: [File System+Registry]                                                              │
+  │       Occurred : 3 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +6.5021  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then created or opened a file/directory.        │
+  │                                                                                                     │
+  │  #2  Pattern : querykey enumeratekey enumeratekey closekeys                                         │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +1.4778  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread queried registry key information, then enumerated sub-keys of a registr │
+  │                  y key, then enumerated sub-keys of a registry key, then closed a registry key hand │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #3  Pattern : closekeys openkey closekeys openkey                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 12 time(s) in this graphlet                                                        │
+  │       Impact   : SHAP = +1.4625  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n closed a registry key handle, then opened an existing registry key.              │
+  │                                                                                                     │
+  │  #4  Pattern : openkey openkey closekeys querykey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 18 time(s) in this graphlet                                                        │
+  │       Impact   : SHAP = -1.4164  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread opened an existing registry key, then opened an existing registry key,  │
+  │                  then closed a registry key handle, then queried registry key information.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #5  Pattern : create read read create                                                              │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.6017  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread created or opened a file/directory, then read data from a file, then re │
+  │                  ad data from a file, then created or opened a file/directory.                      │
+  │       MITRE   : T1005  (Data from Local System) [Collection]                                        │
+  │                                                                                                     │
+  │  #6  Pattern : openkey closekeys openkey closekeys                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 14 time(s) in this graphlet                                                        │
+  │       Impact   : SHAP = +0.5929  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then closed a registry key handle.              │
+  │                                                                                                     │
+  │  #7  Pattern : openkey closekeys openkey querykey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 16 time(s) in this graphlet                                                        │
+  │       Impact   : SHAP = +0.5922  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then queried registry key information.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #8  Pattern : closekeys openkey querykey closekeys                                                 │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 16 time(s) in this graphlet                                                        │
+  │       Impact   : SHAP = +0.5663  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n queried registry key information, then closed a registry key handle.             │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #9  Pattern : read read read read                                                                  │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 35 time(s) in this graphlet                                                        │
+  │       Impact   : SHAP = -0.5646  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread read data from a file, then read data from a file, then read data from  │
+  │                  a file, then read data from a file.                                                │
+  │       MITRE   : T1005  (Data from Local System) [Collection]                                        │
+  │                                                                                                     │
+  │  #10  Pattern : closekeys openkey queryvaluekey querykey                                            │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 5 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.5610  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n read a registry value, then queried registry key information.                    │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                         MITRE ATT&CK SUMMARY — unique techniques observed                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    T1012        Query Registry                           [Discovery]                                │
+  │    T1005        Data from Local System                   [Collection]                               │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                     BEHAVIOURAL ATTACK PROFILE                                     │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    RECONNAISSANCE → DATA HARVESTING: Process enumerated system resources (registry keys, files)     │
+  │    and systematically read data — consistent with information-stealing malware collecting           │
+  │    credentials or configuration data.                                                               │
+  │                                                                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────────┘
+16:58:20 [INFO] [status] 5737 nodes, 42945 edges, 143 roots, 8 classified
+16:58:20 [INFO] [MALWARE detected] PID 8520(powershell)
+16:58:20 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+16:58:20 [INFO] [growing] PID 7904(powershell)=79, PID 2780(svchost)=70, PID 6104(ctfmon)=63, PID 4084(WmiPrvSE)=59, PID 3164(vmtoolsd)=56
+16:58:20 [INFO] [watch PID 8520] 2257 nodes, 13006 edges, image=powershell, kinds={'thread': 21, 'process': 1, 'registry': 1436, 'file': 799}
+16:58:51 [INFO] [status] 5806 nodes, 43456 edges, 143 roots, 8 classified
+16:58:51 [INFO] [MALWARE detected] PID 8520(powershell)
+16:58:51 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+16:58:51 [INFO] [growing] PID 2780(svchost)=82, PID 7904(powershell)=79, PID 6104(ctfmon)=63, PID 2804(OneDrive.Sync.Service)=60, PID 4084(WmiPrvSE)=59
+16:58:51 [INFO] [watch PID 8520] 2264 nodes, 13052 edges, image=powershell, kinds={'thread': 22, 'process': 1, 'registry': 1436, 'file': 805}
+16:59:23 [INFO] [status] 5949 nodes, 44730 edges, 143 roots, 8 classified
+16:59:23 [INFO] [MALWARE detected] PID 8520(powershell)
+16:59:23 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+16:59:23 [INFO] [growing] PID 2780(svchost)=95, PID 4084(WmiPrvSE)=92, PID 7904(powershell)=79, PID 2804(OneDrive.Sync.Service)=66, PID 3164(vmtoolsd)=64
+16:59:23 [INFO] [watch PID 8520] 2330 nodes, 13280 edges, image=powershell, kinds={'thread': 26, 'process': 1, 'registry': 1436, 'file': 867}
+16:59:56 [INFO] [status] 6001 nodes, 45940 edges, 143 roots, 8 classified
+16:59:56 [INFO] [MALWARE detected] PID 8520(powershell)
+16:59:56 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+16:59:56 [INFO] [growing] PID 2780(svchost)=95, PID 4084(WmiPrvSE)=92, PID 7904(powershell)=79, PID 2180(svchost)=75, PID 2804(OneDrive.Sync.Service)=72
+16:59:56 [INFO] [watch PID 8520] 2330 nodes, 13280 edges, image=powershell, kinds={'thread': 26, 'process': 1, 'registry': 1436, 'file': 867}
+17:00:28 [INFO] [status] 6063 nodes, 46280 edges, 143 roots, 8 classified
+17:00:28 [INFO] [MALWARE detected] PID 8520(powershell)
+17:00:28 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+17:00:28 [INFO] [growing] PID 2780(svchost)=99, PID 2180(svchost)=94, PID 4084(WmiPrvSE)=92, PID 7904(powershell)=79, PID 2804(OneDrive.Sync.Service)=73
+17:00:28 [INFO] [watch PID 8520] 2330 nodes, 13281 edges, image=powershell, kinds={'thread': 26, 'process': 1, 'registry': 1436, 'file': 867}
+17:01:00 [INFO] [status] 6142 nodes, 47677 edges, 143 roots, 10 classified
+17:01:00 [INFO] [MALWARE detected] PID 8520(powershell)
+17:01:00 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+17:01:00 [INFO] [growing] PID 2180(svchost)=94, PID 7904(powershell)=79, PID 2804(OneDrive.Sync.Service)=78, PID 3164(vmtoolsd)=76, PID 1116(svchost)=73
+17:01:00 [INFO] [watch PID 8520] 2331 nodes, 13288 edges, image=powershell, kinds={'thread': 27, 'process': 1, 'registry': 1436, 'file': 867}
+17:01:32 [INFO] [status] 6371 nodes, 49150 edges, 143 roots, 10 classified
+17:01:32 [INFO] [MALWARE detected] PID 8520(powershell)
+17:01:32 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+17:01:32 [INFO] [growing] PID 2180(svchost)=95, PID 2804(OneDrive.Sync.Service)=79, PID 7904(powershell)=79, PID 3164(vmtoolsd)=76, PID 1116(svchost)=73
+17:01:32 [INFO] [watch PID 8520] 2495 nodes, 14252 edges, image=powershell, kinds={'thread': 30, 'process': 1, 'registry': 1466, 'file': 998}
+17:02:05 [INFO] [status] 6416 nodes, 52925 edges, 143 roots, 10 classified
+17:02:05 [INFO] [MALWARE detected] PID 8520(powershell)
+17:02:05 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+17:02:05 [INFO] [growing] PID 2180(svchost)=95, PID 2804(OneDrive.Sync.Service)=79, PID 7904(powershell)=79, PID 3164(vmtoolsd)=76, PID 1116(svchost)=74
+17:02:05 [INFO] [watch PID 8520] 2538 nodes, 18002 edges, image=powershell, kinds={'thread': 30, 'process': 1, 'registry': 1468, 'file': 1039}
+17:02:37 [INFO] [status] 6468 nodes, 56677 edges, 143 roots, 10 classified
+17:02:37 [INFO] [MALWARE detected] PID 8520(powershell)
+17:02:37 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+17:02:37 [INFO] [growing] PID 2180(svchost)=95, PID 2804(OneDrive.Sync.Service)=79, PID 7904(powershell)=79, PID 3164(vmtoolsd)=76, PID 1116(svchost)=74
+17:02:37 [INFO] [watch PID 8520] 2589 nodes, 21730 edges, image=powershell, kinds={'thread': 31, 'process': 1, 'registry': 1468, 'file': 1089}
+17:03:09 [INFO] [status] 7161 nodes, 59528 edges, 144 roots, 11 classified
+17:03:09 [INFO] [MALWARE detected] PID 8520(powershell)
+17:03:09 [INFO] [benign] PID 4(System), PID 688(services), PID 6564(SilkETW), PID 2768(WmiPrvSE), PID 6372(WindowsTerminal)
+17:03:09 [INFO] [growing] PID 2180(svchost)=95, PID 2804(OneDrive.Sync.Service)=79, PID 7904(powershell)=79, PID 3164(vmtoolsd)=78, PID 1116(svchost)=74
+17:03:09 [INFO] [watch PID 8520] 2758 nodes, 22596 edges, image=powershell, kinds={'thread': 33, 'process': 1, 'registry': 1606, 'file': 1118}
+17:03:41 [INFO] [status] 7208 nodes, 60037 edges, 144 roots, 12 classified
+17:03:41 [INFO] [MALWARE detected] PID 8520(powershell)
+17:03:41 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=84, PID 7904(powershell)=79, PID 3164(vmtoolsd)=78, PID 1116(svchost)=74, PID 6104(ctfmon)=63
+17:03:41 [INFO] [watch PID 8520] 2758 nodes, 22596 edges, image=powershell, kinds={'thread': 33, 'process': 1, 'registry': 1606, 'file': 1118}
+17:04:13 [INFO] [status] 7303 nodes, 61126 edges, 144 roots, 12 classified
+17:04:13 [INFO] [MALWARE detected] PID 8520(powershell)
+17:04:13 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=85, PID 3164(vmtoolsd)=80, PID 7904(powershell)=79, PID 1116(svchost)=74, PID 6104(ctfmon)=63
+17:04:13 [INFO] [watch PID 8520] 2821 nodes, 23018 edges, image=powershell, kinds={'thread': 35, 'process': 1, 'registry': 1608, 'file': 1177}
+17:04:45 [INFO] [status] 7356 nodes, 62619 edges, 144 roots, 12 classified
+17:04:45 [INFO] [MALWARE detected] PID 8520(powershell)
+17:04:45 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=85, PID 1116(svchost)=84, PID 3164(vmtoolsd)=83, PID 7904(powershell)=79, PID 6104(ctfmon)=63
+17:04:45 [INFO] [watch PID 8520] 2821 nodes, 23018 edges, image=powershell, kinds={'thread': 35, 'process': 1, 'registry': 1608, 'file': 1177}
+17:05:17 [INFO] [status] 7399 nodes, 62805 edges, 144 roots, 12 classified
+17:05:17 [INFO] [MALWARE detected] PID 8520(powershell)
+17:05:17 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=85, PID 1116(svchost)=84, PID 3164(vmtoolsd)=84, PID 7904(powershell)=79, PID 6104(ctfmon)=63
+17:05:17 [INFO] [watch PID 8520] 2821 nodes, 23018 edges, image=powershell, kinds={'thread': 35, 'process': 1, 'registry': 1608, 'file': 1177}
+17:05:49 [INFO] [status] 7434 nodes, 63236 edges, 144 roots, 12 classified
+17:05:49 [INFO] [MALWARE detected] PID 8520(powershell)
+17:05:49 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=85, PID 1116(svchost)=84, PID 3164(vmtoolsd)=84, PID 7904(powershell)=79, PID 6104(ctfmon)=63
+17:05:49 [INFO] [watch PID 8520] 2821 nodes, 23018 edges, image=powershell, kinds={'thread': 35, 'process': 1, 'registry': 1608, 'file': 1177}
+17:06:21 [INFO] [status] 7506 nodes, 64171 edges, 144 roots, 12 classified
+17:06:21 [INFO] [MALWARE detected] PID 8520(powershell)
+17:06:21 [INFO] [growing] PID 3164(vmtoolsd)=85, PID 2804(OneDrive.Sync.Service)=85, PID 1116(svchost)=84, PID 7904(powershell)=79, PID 6104(ctfmon)=63
+17:06:21 [INFO] [watch PID 8520] 2821 nodes, 23018 edges, image=powershell, kinds={'thread': 35, 'process': 1, 'registry': 1608, 'file': 1177}
+17:06:54 [INFO] [status] 7624 nodes, 66736 edges, 144 roots, 13 classified
+17:06:54 [INFO] [MALWARE detected] PID 8520(powershell)
+17:06:54 [INFO] [growing] PID 3164(vmtoolsd)=85, PID 2804(OneDrive.Sync.Service)=85, PID 1116(svchost)=84, PID 1044(svchost)=82, PID 7904(powershell)=79
+17:06:54 [INFO] [watch PID 8520] 2823 nodes, 23026 edges, image=powershell, kinds={'thread': 37, 'process': 1, 'registry': 1608, 'file': 1177}
+17:07:26 [INFO] [status] 7639 nodes, 67071 edges, 144 roots, 13 classified
+17:07:26 [INFO] [MALWARE detected] PID 8520(powershell)
+17:07:26 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=88, PID 1116(svchost)=86, PID 3164(vmtoolsd)=85, PID 1044(svchost)=82, PID 7904(powershell)=79
+17:07:26 [INFO] [watch PID 8520] 2823 nodes, 23026 edges, image=powershell, kinds={'thread': 37, 'process': 1, 'registry': 1608, 'file': 1177}
+17:07:58 [INFO] [status] 7712 nodes, 68660 edges, 144 roots, 14 classified
+17:07:58 [INFO] [MALWARE detected] PID 8520(powershell)
+17:07:58 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=88, PID 3164(vmtoolsd)=86, PID 1044(svchost)=82, PID 7904(powershell)=79, PID 6104(ctfmon)=63
+17:07:58 [INFO] [watch PID 8520] 2829 nodes, 23054 edges, image=powershell, kinds={'thread': 38, 'process': 1, 'registry': 1608, 'file': 1182}
+17:08:30 [INFO] [status] 7813 nodes, 70348 edges, 144 roots, 14 classified
+17:08:30 [INFO] [MALWARE detected] PID 8520(powershell)
+17:08:30 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=88, PID 3164(vmtoolsd)=87, PID 1044(svchost)=82, PID 7904(powershell)=79, PID 6104(ctfmon)=63
+17:08:30 [INFO] [watch PID 8520] 2887 nodes, 23920 edges, image=powershell, kinds={'thread': 44, 'process': 1, 'registry': 1624, 'file': 1218}
+17:09:00 [INFO] [graphlet root=8736 image=powershell] 123 nodes / 409 edges, kinds={'thread': 6, 'process': 1, 'registry': 76, 'file': 40}
+17:09:03 [INFO] [status] 8214 nodes, 74144 edges, 146 roots, 16 classified
+17:09:03 [INFO] [MALWARE detected] PID 8520(powershell)
+17:09:03 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=88, PID 3164(vmtoolsd)=87, PID 1044(svchost)=82, PID 7904(powershell)=79, PID 6104(ctfmon)=76
+17:09:03 [INFO] [watch PID 8520] 2890 nodes, 25085 edges, image=powershell, kinds={'thread': 44, 'process': 1, 'registry': 1624, 'file': 1221}
+17:09:11 [INFO] [graphlet root=8736 image=powershell] 254 nodes / 825 edges, kinds={'file': 108, 'registry': 133, 'thread': 12, 'process': 1}
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │                             SOC ALERT — MALWARE DETECTION EXPLANATION                              │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  Sample  : PID 8736 (powershell)                                                                    │
+  │  Process : powershell                                                                               │
+  │  Model   : LightGBM (RQ1 winner: 91.81% acc, 0.9672 AUC)                                            │
+  │  Verdict : ██ MALWARE — confidence = 0.7840 (78.4%)                                                 │
+  │  Graph   : 254 nodes, 825 edges  (133 registry, 108 file, 12 thread, 1 process)                     │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  T_detect    :     166.48 ms                                                                        │
+  │  T_explain   :      27.34 ms                                                                        │
+  │  T_total     :     193.81 ms                                                                        │
+  │  RQ3 (≤5000ms): [PASS ✓]                                                                            │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                      WHY IS THIS MALWARE? — Top behavioural indicators (SHAP)                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                                                                                     │
+  │  #1  Pattern : openkey closekeys openkey closekeys                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.9038  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then closed a registry key handle.              │
+  │                                                                                                     │
+  │  #2  Pattern : read read read read                                                                  │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.8672  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread read data from a file, then read data from a file, then read data from  │
+  │                  a file, then read data from a file.                                                │
+  │       MITRE   : T1005  (Data from Local System) [Collection]                                        │
+  │                                                                                                     │
+  │  #3  Pattern : File                                                                                 │
+  │       Category: [File]                                                                              │
+  │       Occurred : 111 time(s) in this graphlet                                                       │
+  │       Impact   : SHAP = +0.3768  (→ MALWARE) influences classification                              │
+  │       Meaning  : High interaction with File entities (111 unique neighbours)                        │
+  │                                                                                                     │
+  │  #4  Pattern : openkey closekeys openkey querykey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.2877  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then queried registry key information.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #5  Pattern : closekeys openkey openkey closekeys                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.2409  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n opened an existing registry key, then closed a registry key handle.              │
+  │                                                                                                     │
+  │  #6  Pattern : openkey closekeys openkey openkey                                                    │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 3 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.2259  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then opened an existing registry key.           │
+  │                                                                                                     │
+  │  #7  Pattern : close closekeys queryvaluekey closekeys                                              │
+  │       Category: [File System+Registry]                                                              │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.1959  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread closed a file object, then closed a registry key handle, then read a re │
+  │                  gistry value, then closed a registry key handle.                                   │
+  │                                                                                                     │
+  │  #8  Pattern : close create direnum direnum                                                         │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.1779  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread closed a file object, then created or opened a file/directory, then enu │
+  │                  merated directory contents, then enumerated directory contents.                    │
+  │       MITRE   : T1083  (File and Directory Discovery) [Discovery]                                   │
+  │                                                                                                     │
+  │  #9  Pattern : openkey querykey openkey closekeys                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.1632  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread opened an existing registry key, then queried registry key information, │
+  │                   then opened an existing registry key, then closed a registry key handle.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #10  Pattern : cleanup close cleanup create                                                        │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.1604  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread released a file handle, then closed a file object, then released a file │
+  │                   handle, then created or opened a file/directory.                                  │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                         MITRE ATT&CK SUMMARY — unique techniques observed                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    T1005        Data from Local System                   [Collection]                               │
+  │    T1012        Query Registry                           [Discovery]                                │
+  │    T1083        File and Directory Discovery             [Discovery]                                │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                     BEHAVIOURAL ATTACK PROFILE                                     │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    RECONNAISSANCE → DATA HARVESTING: Process enumerated system resources (registry keys, files)     │
+  │    and systematically read data — consistent with information-stealing malware collecting           │
+  │    credentials or configuration data.                                                               │
+  │                                                                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────────┘
+17:09:23 [INFO] [graphlet root=8736 image=powershell] 509 nodes / 1956 edges, kinds={'file': 132, 'registry': 363, 'thread': 13, 'process': 1}
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │                             SOC ALERT — MALWARE DETECTION EXPLANATION                              │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  Sample  : PID 8736 (powershell)                                                                    │
+  │  Process : powershell                                                                               │
+  │  Model   : LightGBM (RQ1 winner: 91.81% acc, 0.9672 AUC)                                            │
+  │  Verdict : ██ MALWARE — confidence = 0.9758 (97.6%)                                                 │
+  │  Graph   : 509 nodes, 1956 edges  (363 registry, 132 file, 13 thread, 1 process)                    │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  T_detect    :     210.49 ms                                                                        │
+  │  T_explain   :      27.70 ms                                                                        │
+  │  T_total     :     238.19 ms                                                                        │
+  │  RQ3 (≤5000ms): [PASS ✓]                                                                            │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                      WHY IS THIS MALWARE? — Top behavioural indicators (SHAP)                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                                                                                     │
+  │  #1  Pattern : openkey closekeys openkey create                                                     │
+  │       Category: [File System+Registry]                                                              │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +1.9991  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then created or opened a file/directory.        │
+  │                                                                                                     │
+  │  #2  Pattern : openkey openkey closekeys querykey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +1.0868  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then opened an existing registry key,  │
+  │                  then closed a registry key handle, then queried registry key information.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #3  Pattern : read read read read                                                                  │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.8153  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread read data from a file, then read data from a file, then read data from  │
+  │                  a file, then read data from a file.                                                │
+  │       MITRE   : T1005  (Data from Local System) [Collection]                                        │
+  │                                                                                                     │
+  │  #4  Pattern : openkey closekeys openkey closekeys                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.7183  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then closed a registry key handle.              │
+  │                                                                                                     │
+  │  #5  Pattern : openkey querykey openkey closekeys                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 14 time(s) in this graphlet                                                        │
+  │       Impact   : SHAP = -0.3543  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread opened an existing registry key, then queried registry key information, │
+  │                   then opened an existing registry key, then closed a registry key handle.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #6  Pattern : File                                                                                 │
+  │       Category: [File]                                                                              │
+  │       Occurred : 135 time(s) in this graphlet                                                       │
+  │       Impact   : SHAP = +0.3356  (→ MALWARE) influences classification                              │
+  │       Meaning  : High interaction with File entities (135 unique neighbours)                        │
+  │                                                                                                     │
+  │  #7  Pattern : openkey closekeys openkey querykey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 3 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.2971  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then queried registry key information.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #8  Pattern : closekeys openkey openkey closekeys                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.2808  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n opened an existing registry key, then closed a registry key handle.              │
+  │                                                                                                     │
+  │  #9  Pattern : closekeys openkey closekeys openkey                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.2785  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n closed a registry key handle, then opened an existing registry key.              │
+  │                                                                                                     │
+  │  #10  Pattern : openkey closekeys openkey openkey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 3 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.2295  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then opened an existing registry key.           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                         MITRE ATT&CK SUMMARY — unique techniques observed                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    T1012        Query Registry                           [Discovery]                                │
+  │    T1005        Data from Local System                   [Collection]                               │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                     BEHAVIOURAL ATTACK PROFILE                                     │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    RECONNAISSANCE → DATA HARVESTING: Process enumerated system resources (registry keys, files)     │
+  │    and systematically read data — consistent with information-stealing malware collecting           │
+  │    credentials or configuration data.                                                               │
+  │                                                                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────────┘
+17:09:36 [INFO] [status] 9026 nodes, 77614 edges, 146 roots, 16 classified
+17:09:36 [INFO] [MALWARE detected] PID 8520(powershell), PID 8736(powershell)
+17:09:36 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=89, PID 3164(vmtoolsd)=87, PID 1044(svchost)=82, PID 7904(powershell)=79, PID 6104(ctfmon)=76
+17:09:36 [INFO] [watch PID 8520] 3018 nodes, 25631 edges, image=powershell, kinds={'file': 1349, 'thread': 44, 'process': 1, 'registry': 1624}
+17:09:45 [INFO] [graphlet root=8736 image=powershell] 1033 nodes / 4515 edges, kinds={'file': 269, 'registry': 749, 'thread': 14, 'process': 1}
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │                             SOC ALERT — MALWARE DETECTION EXPLANATION                              │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  Sample  : PID 8736 (powershell)                                                                    │
+  │  Process : powershell                                                                               │
+  │  Model   : LightGBM (RQ1 winner: 91.81% acc, 0.9672 AUC)                                            │
+  │  Verdict : ██ MALWARE — confidence = 0.9950 (99.5%)                                                 │
+  │  Graph   : 1033 nodes, 4515 edges  (749 registry, 269 file, 14 thread, 1 process)                   │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  T_detect    :     904.03 ms                                                                        │
+  │  T_explain   :      27.99 ms                                                                        │
+  │  T_total     :     932.02 ms                                                                        │
+  │  RQ3 (≤5000ms): [PASS ✓]                                                                            │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                      WHY IS THIS MALWARE? — Top behavioural indicators (SHAP)                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                                                                                     │
+  │  #1  Pattern : openkey closekeys openkey create                                                     │
+  │       Category: [File System+Registry]                                                              │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +1.9060  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then created or opened a file/directory.        │
+  │                                                                                                     │
+  │  #2  Pattern : openkey openkey closekeys querykey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +1.3816  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then opened an existing registry key,  │
+  │                  then closed a registry key handle, then queried registry key information.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #3  Pattern : openkey closekeys openkey closekeys                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 7 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.9914  (→ MALWARE) strongly influences classification                     │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then closed a registry key handle.              │
+  │                                                                                                     │
+  │  #4  Pattern : read read read read                                                                  │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.8528  (→ BENIGN) strongly influences classification                      │
+  │       Meaning  : The thread read data from a file, then read data from a file, then read data from  │
+  │                  a file, then read data from a file.                                                │
+  │       MITRE   : T1005  (Data from Local System) [Collection]                                        │
+  │                                                                                                     │
+  │  #5  Pattern : closekeys openkey closekeys openkey                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.3982  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n closed a registry key handle, then opened an existing registry key.              │
+  │                                                                                                     │
+  │  #6  Pattern : openkey querykey openkey closekeys                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 21 time(s) in this graphlet                                                        │
+  │       Impact   : SHAP = -0.3373  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread opened an existing registry key, then queried registry key information, │
+  │                   then opened an existing registry key, then closed a registry key handle.          │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #7  Pattern : create create create close                                                           │
+  │       Category: [File System]                                                                       │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.3225  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread created or opened a file/directory, then created or opened a file/direc │
+  │                  tory, then created or opened a file/directory, then closed a file object.          │
+  │                                                                                                     │
+  │  #8  Pattern : closekeys openkey openkey closekeys                                                  │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 2 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.2851  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread closed a registry key handle, then opened an existing registry key, the │
+  │                  n opened an existing registry key, then closed a registry key handle.              │
+  │                                                                                                     │
+  │  #9  Pattern : queryvaluekey closekeys openkey closekeys                                            │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 1 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = -0.2620  (→ BENIGN) influences classification                               │
+  │       Meaning  : The thread read a registry value, then closed a registry key handle, then opened a │
+  │                  n existing registry key, then closed a registry key handle.                        │
+  │       MITRE   : T1012  (Query Registry) [Discovery]                                                 │
+  │                                                                                                     │
+  │  #10  Pattern : openkey closekeys openkey openkey                                                   │
+  │       Category: [Registry]                                                                          │
+  │       Occurred : 4 time(s) in this graphlet                                                         │
+  │       Impact   : SHAP = +0.2364  (→ MALWARE) influences classification                              │
+  │       Meaning  : The thread opened an existing registry key, then closed a registry key handle, the │
+  │                  n opened an existing registry key, then opened an existing registry key.           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                         MITRE ATT&CK SUMMARY — unique techniques observed                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    T1012        Query Registry                           [Discovery]                                │
+  │    T1005        Data from Local System                   [Collection]                               │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                     BEHAVIOURAL ATTACK PROFILE                                     │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │    RECONNAISSANCE → DATA HARVESTING: Process enumerated system resources (registry keys, files)     │
+  │    and systematically read data — consistent with information-stealing malware collecting           │
+  │    credentials or configuration data.                                                               │
+  │                                                                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────────┘
+17:10:09 [INFO] [status] 9548 nodes, 80744 edges, 146 roots, 16 classified
+17:10:09 [INFO] [MALWARE detected] PID 8520(powershell), PID 8736(powershell)
+17:10:09 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=89, PID 3164(vmtoolsd)=87, PID 1044(svchost)=82, PID 7904(powershell)=79, PID 6104(ctfmon)=76
+17:10:09 [INFO] [watch PID 8520] 3070 nodes, 26397 edges, image=powershell, kinds={'file': 1401, 'thread': 44, 'process': 1, 'registry': 1624}
+17:10:41 [INFO] [status] 9766 nodes, 82995 edges, 146 roots, 16 classified
+17:10:41 [INFO] [MALWARE detected] PID 8520(powershell), PID 8736(powershell)
+17:10:41 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=89, PID 3164(vmtoolsd)=87, PID 1044(svchost)=82, PID 7904(powershell)=79, PID 6104(ctfmon)=76
+17:10:41 [INFO] [watch PID 8520] 3216 nodes, 28064 edges, image=powershell, kinds={'file': 1547, 'thread': 44, 'process': 1, 'registry': 1624}
+17:11:13 [INFO] [status] 9981 nodes, 85181 edges, 146 roots, 16 classified
+17:11:13 [INFO] [MALWARE detected] PID 8520(powershell), PID 8736(powershell)
+17:11:13 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=89, PID 3164(vmtoolsd)=87, PID 1044(svchost)=82, PID 7904(powershell)=79, PID 6104(ctfmon)=76
+17:11:13 [INFO] [watch PID 8520] 3402 nodes, 30143 edges, image=powershell, kinds={'file': 1733, 'thread': 44, 'process': 1, 'registry': 1624}
+17:11:45 [INFO] [status] 10234 nodes, 87584 edges, 146 roots, 16 classified
+17:11:45 [INFO] [MALWARE detected] PID 8520(powershell), PID 8736(powershell)
+17:11:45 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=89, PID 3164(vmtoolsd)=87, PID 1044(svchost)=82, PID 7904(powershell)=79, PID 6104(ctfmon)=76
+17:11:45 [INFO] [watch PID 8520] 3500 nodes, 31916 edges, image=powershell, kinds={'file': 1831, 'thread': 44, 'process': 1, 'registry': 1624}
+17:12:17 [INFO] [status] 10497 nodes, 90252 edges, 146 roots, 16 classified
+17:12:17 [INFO] [MALWARE detected] PID 8520(powershell), PID 8736(powershell)
+17:12:17 [INFO] [growing] PID 2804(OneDrive.Sync.Service)=89, PID 3164(vmtoolsd)=87, PID 1044(svchost)=82, PID 7904(powershell)=79, PID 6104(ctfmon)=76
+17:12:17 [INFO] [watch PID 8520] 3567 nodes, 33182 edges, image=powershell, kinds={'file': 1898, 'thread': 44, 'process': 1, 'registry': 1624}
+^C
+[saved] ./rq3_results/rq3_live_results.json
+                                                                 
