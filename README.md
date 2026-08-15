@@ -1,16 +1,10 @@
-# Explainable AI for Graph-Based Fileless Malware Detection
+# Explainable AI for Graph-Based Fileless Malware Detection: Interpreting Graphite N-gram Decisions
 
-**Interpreting Graphite N-gram Decisions**
-MSc Cybersecurity thesis, Munster Technological University, Cork (R00277695)
+MSc Cybersecurity thesis, Munster Technological University, Cork 
 
-This repository accompanies the thesis and contains the runnable code, saved model
-artefacts, and results for all four research questions. It extends the Graphite
-framework (Wakodikar et al., SecureComm 2024) by adding a classifier comparison, an
-XAI faithfulness evaluation, a live SOC detection pipeline, and latency profiling.
+This repository holds the code, trained models and results for my MSc thesis. It builds on the Graphite framework (Wakodikar et al., SecureComm 2024) and adds four things to it: a comparison of four classifiers, a check of how faithful the SHAP and LIME explanations really are, a live SOC detection pipeline, and latency measurements for that pipeline.
 
-The central finding is a feature-representation ceiling: nine samples are misclassified
-by every one of the four architecturally distinct classifiers, which locates the limit
-in the N-gram embedding layer rather than in any single model.
+The main finding is what I have called a feature-representation ceiling. Nine samples are misclassified by all four classifiers, even though those classifiers are built in very different ways. When models that different all fail on the same samples, the fault is not in any one model, it is in the N-gram embedding they all rely on.
 
 ## Architecture
 
