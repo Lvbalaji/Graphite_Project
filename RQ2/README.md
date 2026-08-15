@@ -12,14 +12,13 @@ cause a large drop. The method with the larger drop is the more faithful one.
 - `xai_faithfulness_analysis.py`: the head-to-head SHAP vs LIME comparison across all four
   classifiers, using the top-K feature-masking protocol.
 - `lightgbm_shap_analyzer.py`: the LightGBM plus SHAP deep dive. It trains and saves the
-  final model on first run, then produces the SHAP analysis and figures. This is also the
-  script that creates the saved model used by the live pipeline (see note below).
+  final model on first run, then produces the SHAP analysis and figures. This is the script
+  that creates the saved model used by the live pipeline (see note below).
 - `results_rq2/`: the outputs produced by the scripts.
 
 ## Requirements
 
-Both scripts import the shared modules in `../core` (`parameter_parser.py`,
-`dataprocessor_graphs.py`, `graphite_n_gram.py`). Add the two lines below at the top of
+Both scripts import the shared modules in `../core`. Add the two lines below at the top of
 each script so those imports resolve, or run with `PYTHONPATH=core`:
 
 ```python
@@ -40,10 +39,7 @@ python RQ2/xai_faithfulness_analysis.py --dataset-path dataset --k-values 3 5 10
 Analyse the consensus-failure samples, the ones every model gets wrong:
 
 ```bash
-python RQ2/xai_faithfulness_analysis.py \
-    --dataset-path dataset \
-    --sample-mode wrong \
-    --wrong-consensus all
+python RQ2/xai_faithfulness_analysis.py --dataset-path dataset --sample-mode wrong --wrong-consensus all
 ```
 
 LightGBM plus SHAP deep dive. The first run trains and saves the model, later runs load it
@@ -56,28 +52,18 @@ python RQ2/lightgbm_shap_analyzer.py --dataset-path dataset --retrain
 
 ## Outputs
 
-From `xai_faithfulness_analysis.py` (written to `results_rq2/`):
+`xai_faithfulness_analysis.py` writes to `results_rq2/`: the faithfulness results JSON, plus
+the SHAP vs LIME figures (the faithfulness heatmap, confidence-drop and cumulative-masking
+charts, per-model beeswarms, and scatter plots).
 
-- `rq2_results.json`: per-classifier, per-method, per-K confidence drops.
-- `rq2_faithfulness_heatmap.png`, `rq2_confidence_drop_comparison.png`,
-  `rq2_absolute_drop_comparison.png`, `rq2_cumulative_masking.png`,
-  `rq2_explanation_timing.png`.
-
-From `lightgbm_shap_analyzer.py`:
-
-- `lightgbm_shap_analysis.json` and the SHAP figures (`shap_global_beeswarm.png`,
-  `shap_bar_summary.png`, `shap_dependence_plots.png`, `shap_heatmap.png`,
-  `shap_waterfall_sample_*.png`, `confidence_distribution.png`, `roc_curve.png`,
-  `confusion_matrix.png`, `per_sample_confidence.png`).
-- A `saved_model/` folder next to the script containing `lightgbm_model.joblib`,
-  `graphite_embedder.joblib`, and `model_meta.json`.
+`lightgbm_shap_analyzer.py` produces its own SHAP figures and, importantly, a `saved_model/`
+folder containing `lightgbm_model.joblib`, `graphite_embedder.joblib`, and `model_meta.json`.
 
 ## Note on the saved model
 
-`lightgbm_shap_analyzer.py` writes the trained model into a `saved_model/` folder beside
-itself. That is the exact model the live detector in `RQ3&4/` loads. If you retrain here,
-copy the refreshed `saved_model/` into `RQ3&4/` so the live pipeline uses the same model
-the offline results describe.
+The model written by `lightgbm_shap_analyzer.py` is the exact model the live detector in
+`RQ3&4/` loads. If you retrain here, copy the refreshed `saved_model/` into `RQ3&4/` so the
+live pipeline uses the same model the offline results describe.
 
 ## Result
 
