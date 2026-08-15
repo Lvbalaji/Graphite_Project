@@ -1,6 +1,6 @@
 # Graphite XAI Thesis - Python dependencies
-# Explainable AI for Graph-Based Fileless Malware Detection
-# MSc Cybersecurity, MTU Cork (R00277695)
+# Explainable AI for Graph-Based Fileless Malware Detection: Interpreting Graphite N-gram Decisions
+# MSc Cybersecurity, MTU Cork 
 #
 # Tested on Python 3.10. Install into a clean virtual environment.
 
