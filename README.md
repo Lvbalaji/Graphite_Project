@@ -26,13 +26,15 @@ is the contribution of this thesis.
 
 | RQ  | Question                                             | Main script                                   |
 |-----|------------------------------------------------------|-----------------------------------------------|
-| RQ1 | How do modern classifiers compare on the Graphite embedding? | `rq1_classifier_comparison/comparative_analysis.py` |
-| RQ2 | Which XAI method (SHAP vs LIME) explains those decisions more faithfully? | `rq2_xai_faithfulness/xai_faithfulness_analysis.py`, `lightgbm_shap_analyzer.py` |
-| RQ3 | Can the model run as a live SOC detector on streamed ETW events? | `rq3_4_live_soc/live_soc_simulation.py` |
-| RQ4 | What is the end-to-end detection and explanation latency? | `rq3_4_live_soc/live_soc_simulation.py` |
+| RQ1 | How do modern classifiers compare on the Graphite embedding? | `RQ1/comparative_analysis.py` |
+| RQ2 | Which XAI method (SHAP vs LIME) explains those decisions more faithfully? | `RQ2/xai_faithfulness_analysis.py`, `RQ2/lightgbm_shap_analyzer.py` |
+| RQ3 | Can the model run as a live SOC detector on streamed ETW events? | `RQ3&4/live_soc_simulation.py` |
+| RQ4 | What is the end-to-end detection and explanation latency? | `RQ3&4/live_soc_simulation.py` |
 
 Headline result: LightGBM reaches 91.81% accuracy and 91.30% F1 (a 3.99 point F1 gain
 over the Random Forest baseline). SHAP won all twelve faithfulness comparisons.
+
+Each research-question folder has its own README with detailed run instructions.
 
 ---
 
@@ -44,36 +46,35 @@ Graphite_Project/
 ├── requirements.txt
 │
 ├── core/                          # shared modules used by RQ1 and RQ2
+│   ├── README.md
 │   ├── main.py
 │   ├── graphite_n_gram.py
 │   ├── dataprocessor_graphs.py
 │   └── parameter_parser.py
 │
 ├── dataset/
-│   ├── train/
-│   │   ├── benign/
-│   │   └── malware/
-│   ├── test/
-│   │   ├── benign/
-│   │   └── malware/
+│   ├── train/{benign, malware}/
+│   ├── test/{benign, malware}/
 │   ├── EventName_EdgeFeatures.json
 │   └── NodeType_NodeFeatures.json
 │
-├── rq1_classifier_comparison/
+├── RQ1/
+│   ├── README.md
 │   ├── comparative_analysis.py
-│   └── results/                   # rq1_results.json, misclassification_overlap.json
+│   └── results/                   # metrics JSON, overlap JSON, comparison figures
 │
-├── rq2_xai_faithfulness/
+├── RQ2/
+│   ├── README.md
 │   ├── xai_faithfulness_analysis.py
 │   ├── lightgbm_shap_analyzer.py
-│   └── results/                   # rq2_results.json, lightgbm_shap_analysis.json
+│   └── results_rq2/               # faithfulness JSON and figures
 │
-├── rq3_4_live_soc/
-│   ├── live_soc_simulation.py
+├── RQ3&4/
+│   ├── README.md
+│   ├── live_soc_simulation.py     # detection engine (SilkETW translation tables are inside this file)
 │   ├── logstash_pipeline_example.conf
-│   ├── silketw_to_graphite_lookup.py
-│   ├── models/                    # lightgbm_model.joblib, graphite_embedder.joblib, model_meta.json
-│   └── sample_alert_output.txt
+│   ├── saved_model/               # lightgbm_model.joblib, graphite_embedder.joblib, model_meta.json
+│   └── rq3&4_results/             # live detection results
 │
 └── docs/
     └── figures/                   # diagrams used in this README
@@ -104,10 +105,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "core"))
 Alternatively, run without editing anything by putting `core` on the path for the command:
 
 ```bash
-PYTHONPATH=./core python rq1_classifier_comparison/comparative_analysis.py ...
+PYTHONPATH=./core python RQ1/comparative_analysis.py ...
 ```
 
-All commands below are run from the repository root.
+The RQ1 and RQ2 commands below are run from the repository root.
 
 ---
 
@@ -127,19 +128,14 @@ embedding, and records the misclassification overlap that underpins the
 feature-representation ceiling.
 
 ```bash
-python rq1_classifier_comparison/comparative_analysis.py \
-    --dataset-path ./dataset \
+python RQ1/comparative_analysis.py \
+    --dataset-path dataset \
     --classifier all \
-    --output-dir ./rq1_classifier_comparison/results
+    --output-dir RQ1/results
 ```
 
-Run a single classifier instead of all four:
-
-```bash
-python rq1_classifier_comparison/comparative_analysis.py --dataset-path ./dataset --classifier lightgbm
-```
-
-Outputs: `rq1_results.json`, `misclassification_overlap.json`, and the comparison figures.
+Results are written to `RQ1/results/` (metrics, misclassification overlap, and the
+comparison figures).
 
 LightGBM leads on cross-validated F1, holds the strongest ROC-AUC, and keeps a low false
 positive rate, which matters most for SOC deployment.
@@ -156,29 +152,26 @@ Applies SHAP and LIME to all four classifiers, masks the top-K features, and mea
 resulting confidence drop to judge which method more faithfully reflects each model.
 
 ```bash
-python rq2_xai_faithfulness/xai_faithfulness_analysis.py \
-    --dataset-path ./dataset \
-    --k-values 3 5 10
+python RQ2/xai_faithfulness_analysis.py --dataset-path dataset --k-values 3 5 10
 ```
 
 Reproduce the analysis of the consensus-failure samples (the nine that every model gets
 wrong):
 
 ```bash
-python rq2_xai_faithfulness/xai_faithfulness_analysis.py \
-    --dataset-path ./dataset \
-    --sample-mode wrong \
-    --wrong-consensus all
+python RQ2/xai_faithfulness_analysis.py --dataset-path dataset --sample-mode wrong --wrong-consensus all
 ```
 
 LightGBM plus SHAP deep dive (trains and saves the model on first run, loads it on later
 runs):
 
 ```bash
-python rq2_xai_faithfulness/lightgbm_shap_analyzer.py --dataset-path ./dataset
+python RQ2/lightgbm_shap_analyzer.py --dataset-path dataset
 ```
 
-Outputs: `rq2_results.json`, `lightgbm_shap_analysis.json`, and the SHAP and LIME figures.
+Results are written to `RQ2/results_rq2/` (the faithfulness JSON and the SHAP and LIME
+figures). `lightgbm_shap_analyzer.py` also trains and saves the model that the live
+pipeline uses (see below).
 
 Masking SHAP-ranked features causes a much larger confidence drop than masking
 LIME-ranked features across every classifier and every value of K, so SHAP is the more
@@ -196,24 +189,30 @@ correlated N-gram features.
 ## Live pipeline (RQ3 and RQ4)
 
 The live detector consumes ETW events through the pipeline
-SilkETW to Logstash to Elasticsearch, then scores each graph and explains the alert with
-SHAP. Latency is scoped to detection plus explanation once events reach Elasticsearch,
-and stays well inside the 5,000 ms budget.
+SilkETW to Logstash to Elasticsearch, then scores each process graph and explains the
+alert with SHAP. Latency is scoped to detection plus explanation once events reach
+Elasticsearch, and stays well inside the 5,000 ms budget.
 
 ![Real-time detection data flow](docs/figures/fig3_3_live_pipeline.png)
 
+Run from inside the folder (the name contains an `&`, so quote it):
+
 ```bash
-python rq3_4_live_soc/live_soc_simulation.py
+cd "RQ3&4"
+python live_soc_simulation.py --trigger-nodes 200 --dashboard --watch-pid 5380
 ```
 
-Running this end to end requires a full capture environment (SilkETW on a Windows victim
-host, Logstash, and a reachable Elasticsearch index), so it is not reproducible from the
-repository alone. The detection engine, the Logstash ingestion config, the saved model
-artefacts, the SilkETW to Graphite lookup table, and a representative alert
-(`sample_alert_output.txt`) are included so the logic and output format can be inspected
-directly. The saved model in `models/` matches the one used for the live results, so the
-scoring and explanation stages can be exercised on individual samples without the full
-stack.
+The optional dashboard then serves at `http://localhost:8050`, and results are written to
+`RQ3&4/rq3&4_results/`.
+
+Running the live mode end to end requires a full capture environment (SilkETW on a Windows
+victim host, Logstash, and a reachable Elasticsearch index), so it is not reproducible from
+the repository alone. The engine also has a `--dataset-test` mode that runs on the real
+dataset graphlets with no capture stack, which is the reproducible way to check detection
+and latency. See `RQ3&4/README.md` for all three run modes and the required SilkETW capture
+flags. The SilkETW to Graphite event-name translation is defined inside
+`live_soc_simulation.py`, and the model in `saved_model/` matches the one used for the
+reported results.
 
 ---
 
