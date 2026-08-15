@@ -1,0 +1,32 @@
+# Graphite XAI Thesis - Python dependencies
+# Explainable AI for Graph-Based Fileless Malware Detection
+# MSc Cybersecurity, MTU Cork (R00277695)
+#
+# Tested on Python 3.10. Install into a clean virtual environment.
+
+# --- Core Graphite modelling (shared by RQ1 and RQ2) ---
+numpy>=1.23
+scikit-learn>=1.1,<1.4
+torch==1.13.0
+torch-geometric==2.3.1
+networkx>=2.8,<4
+igraph>=0.10,<0.12
+python-dateutil>=2.8
+
+# --- Classifiers (RQ1) ---
+xgboost>=1.7
+lightgbm>=3.3
+
+# --- Explainability (RQ2) ---
+shap>=0.42
+lime>=0.2
+
+# --- Plotting ---
+matplotlib>=3.5
+seaborn>=0.12
+
+# --- Model persistence (saved LightGBM model and fitted vectoriser) ---
+joblib>=1.2
+
+# --- Live SOC pipeline (RQ3 and RQ4) ---
+elasticsearch>=7,<8
